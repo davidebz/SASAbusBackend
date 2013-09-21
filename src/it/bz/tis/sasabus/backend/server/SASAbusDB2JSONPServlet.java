@@ -287,6 +287,7 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
             path = "";
          }
          final Object[] result = new Object[] { null };
+         /*
          if (path.equals("/gc"))
          {
             System.gc();
@@ -300,6 +301,7 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
             resp.getWriter().write("heap!");
             return;
          }
+         */
          if (path.equals("/listBusAreasLinesStopsStations"))
          {
             sasabusdb.listBusAreasLinesStopsStations(new SASAbusDBDataReady<AreaList>()
