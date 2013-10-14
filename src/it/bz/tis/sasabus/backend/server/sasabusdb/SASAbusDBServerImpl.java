@@ -25,7 +25,9 @@ import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
 import it.bz.tis.sasabus.backend.shared.BusTripStopList;
 import it.bz.tis.sasabus.backend.shared.BusTripStopReference;
+import it.bz.tis.sasabus.backend.shared.FreeSlots;
 import it.bz.tis.sasabus.backend.shared.NewsList;
+import it.bz.tis.sasabus.backend.shared.ParkingInfo;
 import it.bz.tis.sasabus.backend.shared.SASAbusBackendMarshaller;
 import it.bz.tis.sasabus.backend.shared.SASAbusBackendUnmarshaller;
 import it.bz.tis.sasabus.backend.shared.SASAbusDB;
@@ -225,5 +227,17 @@ public class SASAbusDBServerImpl implements SASAbusDB
    public void loadNews(SASAbusDBDataReady<NewsList> response)
    {
       throw new IllegalStateException("loadNews is implemented with a separate servlet!");
+   }
+
+   @Override
+   public void loadParkingInfo(String parkingid, SASAbusDBDataReady<ParkingInfo> response)
+   {
+      throw new IllegalStateException("loadParkingInfo is implemented with a separate servlet!");
+   }
+
+   @Override
+   public void loadParkingFreeSlots(String parkingid, SASAbusDBDataReady<FreeSlots> response)
+   {
+      throw new IllegalStateException("loadParkingFreeSlots is implemented with a separate servlet!");
    }
 }

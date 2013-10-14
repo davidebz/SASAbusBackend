@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-   id="WebApp_ID" version="2.5">
-   <display-name>SASAbusBackend</display-name>
-
-   <servlet>
-      <servlet-name>NewsServlet</servlet-name>
-      <servlet-class>it.bz.tis.sasabus.backend.server.NewsServlet</servlet-class>
-   </servlet>
-
-   <servlet-mapping>
-      <servlet-name>NewsServlet</servlet-name>
-      <url-pattern>/news</url-pattern>
-   </servlet-mapping>
-
-   <servlet>
-      <servlet-name>DB2JSONP</servlet-name>
-      <servlet-class>it.bz.tis.sasabus.backend.server.SASAbusDB2JSONPServlet</servlet-class>
-      <load-on-startup>1</load-on-startup>
-   </servlet>
-
-   <servlet-mapping>
-      <servlet-name>DB2JSONP</servlet-name>
-      <url-pattern>/sasabusdb/*</url-pattern>
-   </servlet-mapping>
-
-   
-
-   <welcome-file-list>
-      <welcome-file>index.html</welcome-file>
-      <welcome-file>index.htm</welcome-file>
-      <welcome-file>index.jsp</welcome-file>
-      <welcome-file>default.html</welcome-file>
-      <welcome-file>default.htm</welcome-file>
-      <welcome-file>default.jsp</welcome-file>
-   </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SASAbusBackend</display-name>
+  <servlet>
+    <servlet-name>NewsServlet</servlet-name>
+    <servlet-class>it.bz.tis.sasabus.backend.server.NewsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/news</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ParkingServlet</servlet-name>
+    <servlet-class>it.bz.tis.sasabus.backend.server.ParkingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParkingServlet</servlet-name>
+    <url-pattern>/parking/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ParkingFreeSlotsServlet</servlet-name>
+    <servlet-class>it.bz.tis.sasabus.backend.server.ParkingFreeSlotsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParkingFreeSlotsServlet</servlet-name>
+    <url-pattern>/parkingfreeslots/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DB2JSONP</servlet-name>
+    <servlet-class>it.bz.tis.sasabus.backend.server.SASAbusDB2JSONPServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DB2JSONP</servlet-name>
+    <url-pattern>/sasabusdb/*</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>

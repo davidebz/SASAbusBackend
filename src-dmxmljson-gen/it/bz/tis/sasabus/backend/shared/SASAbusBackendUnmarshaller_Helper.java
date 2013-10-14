@@ -236,6 +236,50 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                }
          }
       });
+      this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.ParkingInfo", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.backend.shared.ParkingInfo((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.ParkingInfo", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // slots
+            if ((value = structure.property("slots")) != null)
+               if (value.isNull())
+                  new RuntimeException("Impossibile value for primitive type");
+               else
+               {
+                  ((ParkingInfo)obj).slots = (int)value.integer();
+               }
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.FreeSlots", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.backend.shared.FreeSlots((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.FreeSlots", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // slots
+            if ((value = structure.property("slots")) != null)
+               if (value.isNull())
+                  new RuntimeException("Impossibile value for primitive type");
+               else
+               {
+                  ((FreeSlots)obj).slots = (int)value.integer();
+               }
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.News", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             return new it.bz.tis.sasabus.backend.shared.News((Void)null);

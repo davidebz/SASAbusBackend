@@ -27,7 +27,6 @@ import it.bz.tis.sasabus.backend.shared.travelplanner.ConRes;
 public interface SASAbusDB
 {
 
-
    public void lastModified(SASAbusDBDataReady<SASAbusDBLastModified> response);
 
    public void listBusAreasLinesStopsStations(SASAbusDBDataReady<AreaList> response);
@@ -44,5 +43,9 @@ public interface SASAbusDB
    public void nextRoute(String context, SASAbusDBDataReady<ConRes> response) throws Exception;
 
    public void loadNews(SASAbusDBDataReady<NewsList> response);
+
+   public void loadParkingInfo(String parkingid, SASAbusDBDataReady<ParkingInfo> response);
+
+   public void loadParkingFreeSlots(String parkingid, SASAbusDBDataReady<FreeSlots> response);
 
 }
