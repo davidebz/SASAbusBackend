@@ -189,6 +189,12 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
 
    void sendMail(String subject, String body)
    {
+      // Don't send e-mail if password is empty/missing
+      if (this.smtpPass.trim().length() == 0)
+      {
+         return;
+      }
+
       try
       {
          Properties props = new Properties();
