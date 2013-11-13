@@ -1,0 +1,113 @@
+CREATE TABLE android_metadata (
+    locale TEXT
+);
+CREATE TABLE bacini (
+    id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome_de TEXT,
+    nome_it TEXT,
+    nome_table TEXT
+);
+CREATE TABLE bo_corse (
+    id              INTEGER PRIMARY KEY,
+    lineaId         INTEGER,
+    dest_de         TEXT,
+    dest_it         TEXT,
+    effettuazione   TEXT,
+    orario_partenza TEXT,
+    varianteId	    INTEGER
+);
+CREATE TABLE bo_linee (
+    id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    abbrev   TEXT,
+    descr_it TEXT,
+    descr_de TEXT,
+    num_lin  TEXT,
+    farbcode TEXT
+);
+CREATE TABLE bo_orarii (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    corsaId     INTEGER,
+    palinaId    INTEGER,
+    progressivo INTEGER,
+    orario      TEXT
+);
+CREATE TABLE me_corse (
+    id              INTEGER PRIMARY KEY,
+    lineaId         INTEGER,
+    dest_de         TEXT,
+    dest_it         TEXT,
+    effettuazione   TEXT,
+    orario_partenza TEXT,
+    varianteId	    INTEGER
+);
+CREATE TABLE me_linee (
+    id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    abbrev   TEXT,
+    descr_it TEXT,
+    descr_de TEXT,
+    num_lin  TEXT,
+    farbcode TEXT
+);
+CREATE TABLE me_orarii (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    corsaId     INTEGER,
+    palinaId    INTEGER,
+    progressivo INTEGER,
+    orario      TEXT
+);
+CREATE TABLE paline (
+    id          INTEGER PRIMARY KEY,
+    nome_de     TEXT,
+    nome_it     TEXT,
+    latitudine  REAL,
+    longitudine REAL
+);
+CREATE TABLE su_corse (
+    id              INTEGER PRIMARY KEY,
+    lineaId         INTEGER,
+    dest_de         TEXT,
+    dest_it         TEXT,
+    effettuazione   TEXT,
+    orario_partenza TEXT,
+    varianteId	    INTEGER
+);
+CREATE TABLE su_linee (
+    id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    abbrev   TEXT,
+    descr_it TEXT,
+    descr_de TEXT,
+    num_lin  TEXT,
+    farbcode TEXT
+);
+CREATE TABLE su_orarii (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    corsaId     INTEGER,
+    palinaId    INTEGER,
+    progressivo INTEGER,
+    orario      TEXT
+);
+CREATE TABLE validita (
+    da_data DATE,
+    a_data  DATE
+);
+CREATE INDEX bo_corselidx on bo_corse(lineaId);
+CREATE INDEX bo_corsevidx on bo_corse(varianteId);
+CREATE INDEX bo_lineeaidx on bo_linee(abbrev);
+CREATE INDEX bo_lineenidx on bo_linee(num_lin);
+CREATE INDEX bo_orariicidx on bo_orarii(corsaId);
+CREATE INDEX bo_orariipidx on bo_orarii(palinaId);
+CREATE INDEX idx1 ON paline (
+    nome_de
+);
+CREATE INDEX me_corselidx on me_corse(lineaId);
+CREATE INDEX me_corsevidx on me_corse(varianteId);
+CREATE INDEX me_lineeaidx on me_linee(abbrev);
+CREATE INDEX me_lineenidx on me_linee(num_lin);
+CREATE INDEX me_orariicidx on me_orarii(corsaId);
+CREATE INDEX me_orariipidx on me_orarii(palinaId);
+CREATE INDEX su_corselidx on su_corse(lineaId);
+CREATE INDEX su_corsevidx on su_corse(varianteId);
+CREATE INDEX su_lineeaidx on su_linee(abbrev);
+CREATE INDEX su_lineenidx on su_linee(num_lin);
+CREATE INDEX su_orariicidx on su_orarii(corsaId);
+CREATE INDEX su_orariipidx on su_orarii(palinaId);
