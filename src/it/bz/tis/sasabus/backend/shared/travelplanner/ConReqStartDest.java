@@ -24,9 +24,6 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class ConReqStartDest
 {
-   ConReqStartDest(Void void1)
-   {
-   }
 
    public ConReqStartDest()
    {

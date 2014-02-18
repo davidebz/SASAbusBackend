@@ -292,7 +292,7 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
          {
             path = "";
          }
-         final Object[] result = new Object[] { null };
+         final Object[] result = new Object[]{null};
          /*
          if (path.equals("/gc"))
          {
@@ -380,7 +380,7 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
          if (result[0] != null)
          {
             long start2 = System.currentTimeMillis();
-            JSONStructure jsonStructure = new JSONStructure();
+            JSONStructure jsonStructure = new JSONStructure(0);
             this.marshaller.marschall(result[0], jsonStructure);
             resp.setContentType("application/javascript; charset=utf-8");
             resp.setDateHeader("Last-Modified", System.currentTimeMillis());

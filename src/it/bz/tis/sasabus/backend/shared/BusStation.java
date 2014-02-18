@@ -31,20 +31,23 @@ public class BusStation
    String    name_it;
    String    name_de;
 
-   BusStop[] busStops = new BusStop[0];
-   BusLine[] busLines = new BusLine[0];
+   BusStop[] busStops;
+   BusLine[] busLines;
 
    // Derived
-   String    id       = ":";
+   String    id;
 
    public BusStation(String name_it, String name_de)
    {
       super();
       this.name_it = name_it;
       this.name_de = name_de;
+      busStops = new BusStop[0];
+      busLines = new BusLine[0];
+      id = ":";
    }
 
-   BusStation(Void void1)
+   BusStation()
    {
    }
 

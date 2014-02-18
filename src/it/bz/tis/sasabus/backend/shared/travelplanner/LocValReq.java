@@ -32,8 +32,4 @@ public class LocValReq
 
    }
 
-   LocValReq(Void void1)
-   {
-   }
-
 }

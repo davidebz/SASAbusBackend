@@ -57,7 +57,7 @@ public class ReqC
       this.ConReq[0].ReqT.time = hh + ":" + mm;
    }
 
-   ReqC(Void void1)
+   ReqC()
    {
    }
 

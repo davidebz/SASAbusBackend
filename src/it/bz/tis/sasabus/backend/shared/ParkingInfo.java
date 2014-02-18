@@ -23,10 +23,6 @@ public class ParkingInfo
 {
    int slots;
 
-   protected ParkingInfo(Void void1)
-   {
-   }
-
    public int getSlots()
    {
       return this.slots;

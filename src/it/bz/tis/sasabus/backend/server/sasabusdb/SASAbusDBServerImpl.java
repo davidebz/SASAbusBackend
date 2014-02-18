@@ -157,14 +157,43 @@ public class SASAbusDBServerImpl implements SASAbusDB
                          SASAbusDBDataReady<ConRes> response) throws Exception
    {
       BusStation startBusStation = this.busStationsById.get(startBusStationId);
+      BusStation endBusStation = this.busStationsById.get(endBusStationId);
+
+      calcRouting(startBusStation.getName_it() + " - " + startBusStation.getName_de(),
+                  endBusStation.getName_it() + " - " + endBusStation.getName_de(),
+                  yyyymmddhhmm,
+                  response);
+      /*
       ReqC startBusStationRequest = new ReqC(startBusStation.getName_it() +
                                              " - " +
                                              startBusStation.getName_de());
       ResC startBusStationResponse = new ResC();
       queryTravelPlanner(startBusStationRequest, "ReqC", startBusStationResponse);
 
-      BusStation endBusStation = this.busStationsById.get(endBusStationId);
       ReqC endBusStationRequest = new ReqC(endBusStation.getName_it() + " - " + endBusStation.getName_de());
+      ResC endBusStationResponse = new ResC();
+      queryTravelPlanner(endBusStationRequest, "ReqC", endBusStationResponse);
+
+      ReqC routeRequest = new ReqC(startBusStationResponse.getLocValRes().getStations()[0],
+                                   endBusStationResponse.getLocValRes().getStations()[0],
+                                   yyyymmddhhmm);
+      ResC routeResponse = new ResC();
+      queryTravelPlanner(routeRequest, "ReqC", routeResponse);
+
+      response.ready(routeResponse.getConRes()[0]);
+      */
+   }
+
+   public static void calcRouting(String startBusStationNameItDe,
+                                  String endBusStationNameItDe,
+                                  long yyyymmddhhmm,
+                                  SASAbusDBDataReady<ConRes> response) throws Exception
+   {
+      ReqC startBusStationRequest = new ReqC(startBusStationNameItDe);
+      ResC startBusStationResponse = new ResC();
+      queryTravelPlanner(startBusStationRequest, "ReqC", startBusStationResponse);
+
+      ReqC endBusStationRequest = new ReqC(endBusStationNameItDe);
       ResC endBusStationResponse = new ResC();
       queryTravelPlanner(endBusStationRequest, "ReqC", endBusStationResponse);
 
@@ -179,6 +208,11 @@ public class SASAbusDBServerImpl implements SASAbusDB
 
    @Override
    public void nextRoute(String context, SASAbusDBDataReady<ConRes> response) throws Exception
+   {
+      nextRouteImpl(context, response);
+   }
+
+   public static void nextRouteImpl(String context, SASAbusDBDataReady<ConRes> response) throws Exception
    {
       ReqC nextRouteRequest = new ReqC(new ConScrReq(context));
       ResC routeResponse = new ResC();

@@ -31,7 +31,7 @@ public class SASAbusDBLastModified
       this.timestamp = lastModified;
    }
 
-   public SASAbusDBLastModified(Void void1)
+   public SASAbusDBLastModified()
    {
    }
 

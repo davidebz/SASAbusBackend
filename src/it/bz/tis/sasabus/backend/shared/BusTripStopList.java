@@ -32,7 +32,7 @@ public class BusTripStopList
       this.busTripStops = busTripStops;
    }
 
-   BusTripStopList(Void void1)
+   BusTripStopList()
    {
    }
 

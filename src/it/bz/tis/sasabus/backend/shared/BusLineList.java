@@ -32,7 +32,7 @@ public class BusLineList
       this.busLines = busLines;
    }
 
-   BusLineList(Void void1)
+   BusLineList()
    {
    }
 

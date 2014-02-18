@@ -24,10 +24,6 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class ReqT
 {
-   ReqT(Void void1)
-   {
-   }
-
    public ReqT()
    {
    }

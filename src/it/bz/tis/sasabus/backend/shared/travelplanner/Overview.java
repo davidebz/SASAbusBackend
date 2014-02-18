@@ -24,7 +24,7 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class Overview
 {
-   protected Overview(Void void1)
+   protected Overview()
    {
    }
 

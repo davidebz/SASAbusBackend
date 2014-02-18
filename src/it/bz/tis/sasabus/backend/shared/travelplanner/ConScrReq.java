@@ -33,7 +33,7 @@ public class ConScrReq
       this.ConResCtxt[0] = context;
    }
 
-   protected ConScrReq(Void void1)
+   protected ConScrReq()
    {
    }
 }

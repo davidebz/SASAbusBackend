@@ -24,7 +24,7 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class JourneyAttribute
 {
-   JourneyAttribute(Void void1)
+   JourneyAttribute()
    {
    }
 

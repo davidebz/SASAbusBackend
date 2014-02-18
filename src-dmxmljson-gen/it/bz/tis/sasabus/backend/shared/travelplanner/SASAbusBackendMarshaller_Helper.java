@@ -27,7 +27,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.ConReq[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReq[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConReq").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConReq").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -41,7 +41,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConScrReq").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConScrReq").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -55,7 +55,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("LocValReq").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("LocValReq").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -130,7 +130,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.ConRes[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.ConRes[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConRes").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConRes").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -144,7 +144,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("LocValRes").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("LocValRes").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -216,7 +216,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                java.lang.String[] rawarray = (java.lang.String[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConResCtxt").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConResCtxt").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -288,7 +288,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                java.lang.String[] rawarray = (java.lang.String[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConResCtxt").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConResCtxt").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -331,7 +331,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.Station[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.Station[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("Station").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("Station").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -366,7 +366,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.Prod[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.Prod[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("Prod").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("Prod").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -512,7 +512,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.Connection[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.Connection[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("Connection").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("Connection").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -674,7 +674,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.ConSection[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.ConSection[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConSection").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("ConSection").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -746,7 +746,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.Journey[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.Journey[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("Journey").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("Journey").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -760,7 +760,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.Walk[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.Walk[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("Walk").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("Walk").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -937,7 +937,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("JourneyAttribute").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("JourneyAttribute").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -964,7 +964,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("BasicStop").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("BasicStop").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -1054,7 +1054,7 @@ public class SASAbusBackendMarshaller_Helper extends it.bz.tis.sasabus.backend.s
             else
             {
                it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant[] rawarray = (it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("AttributeVariant").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("AttributeVariant").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                

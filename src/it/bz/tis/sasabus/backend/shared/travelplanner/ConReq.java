@@ -24,9 +24,6 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class ConReq
 {
-   ConReq(Void void1)
-   {
-   }
 
    public ConReq()
    {

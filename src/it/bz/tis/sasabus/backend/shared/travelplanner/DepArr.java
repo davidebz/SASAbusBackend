@@ -26,7 +26,7 @@ public class DepArr
 {
    String Time;
 
-   protected DepArr(Void void1)
+   protected DepArr()
    {
    }
 

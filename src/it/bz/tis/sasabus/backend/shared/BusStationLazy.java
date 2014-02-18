@@ -34,7 +34,7 @@ public class BusStationLazy
       this.name_de = name_de;
    }
 
-   BusStationLazy(Void void1)
+   BusStationLazy()
    {
    }
 

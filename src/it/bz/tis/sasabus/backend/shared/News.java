@@ -30,10 +30,6 @@ public class News
    {
    }
 
-   News(Void void1)
-   {
-   }
-
    String            id;
    String            titel_de;
    String            titel_it;

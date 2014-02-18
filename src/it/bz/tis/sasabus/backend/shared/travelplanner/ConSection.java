@@ -24,10 +24,10 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class ConSection
 {
-   Journey[] Journey = new Journey[0];
-   Walk[]    Walk    = new Walk[0];
+   Journey[] Journey;
+   Walk[]    Walk;
 
-   ConSection(Void void1)
+   ConSection()
    {
    }
 
@@ -38,6 +38,10 @@ public class ConSection
 
    public Walk[] getWalks()
    {
+      if (Walk == null)
+      {
+         this.Walk = new Walk[0];
+      }
       return this.Walk;
    }
 

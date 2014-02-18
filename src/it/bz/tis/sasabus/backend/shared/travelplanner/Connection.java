@@ -24,7 +24,7 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class Connection
 {
-   Connection(Void void1)
+   Connection()
    {
    }
 

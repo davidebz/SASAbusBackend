@@ -24,7 +24,7 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class PassList
 {
-   public PassList(Void void1)
+   public PassList()
    {
    }
 

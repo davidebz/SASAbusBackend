@@ -11,14 +11,48 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
 {
    protected SASAbusBackendUnmarshaller_Helper()
    {
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ReqC", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ReqC>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ReqC  ret){
+            // ConReq
+            if (ret.ConReq != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqC.ConReq");
+            // ConScrReq
+            if (ret.ConScrReq != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqC.ConScrReq");
+            // LocValReq
+            if (ret.LocValReq != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqC.LocValReq");
+            // accessId
+            if (ret.accessId != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqC.accessId");
+            // lang
+            if (ret.lang != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqC.lang");
+            // prod
+            if (ret.prod != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqC.prod");
+            // ver
+            if (ret.ver != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqC.ver");
+            // xmlns__xsi
+            if (ret.xmlns__xsi != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqC.xmlns__xsi");
+            // xsi__noNamespaceSchemaLocation
+            if (ret.xsi__noNamespaceSchemaLocation != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqC.xsi__noNamespaceSchemaLocation");
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ReqC", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ReqC((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ReqC ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ReqC();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ReqC").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ReqC", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -30,23 +64,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.ConReq[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.ConReq[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("ConReq"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("ConReq"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ReqC)obj).ConReq = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReq[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.ConReq[0]);
+                  arr.close();        
+                  ((ReqC)obj).ConReq = arrayList;
                }
             // ConScrReq
             if ((value = structure.property("ConScrReq")) != null)
@@ -55,23 +93,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("ConScrReq"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("ConScrReq"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ReqC)obj).ConScrReq = (it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq[0]);
+                  arr.close();        
+                  ((ReqC)obj).ConScrReq = arrayList;
                }
             // LocValReq
             if ((value = structure.property("LocValReq")) != null)
@@ -80,23 +122,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("LocValReq"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("LocValReq"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ReqC)obj).LocValReq = (it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq[0]);
+                  arr.close();        
+                  ((ReqC)obj).LocValReq = arrayList;
                }
             // accessId
             if ((value = structure.property("accessId")) != null)
@@ -146,16 +192,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((ReqC)obj).xsi__noNamespaceSchemaLocation = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ResC", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ResC>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ResC  ret){
+            // ConRes
+            if (ret.ConRes != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ResC.ConRes");
+            // LocValRes
+            if (ret.LocValRes != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ResC.LocValRes");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ResC", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ResC((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ResC ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ResC();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ResC").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ResC", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -167,23 +227,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.ConRes[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.ConRes[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.ConRes)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("ConRes"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("ConRes"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.ConRes)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ResC)obj).ConRes = (it.bz.tis.sasabus.backend.shared.travelplanner.ConRes[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.ConRes[0]);
+                  arr.close();        
+                  ((ResC)obj).ConRes = arrayList;
                }
             // LocValRes
             if ((value = structure.property("LocValRes")) != null)
@@ -192,34 +256,58 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("LocValRes"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("LocValRes"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ResC)obj).LocValRes = (it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes[0]);
+                  arr.close();        
+                  ((ResC)obj).LocValRes = arrayList;
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ConReq", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ConReq>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ConReq  ret){
+            // Dest
+            if (ret.Dest != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConReq.Dest");
+            // RFlags
+            if (ret.RFlags != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConReq.RFlags");
+            // ReqT
+            if (ret.ReqT != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConReq.ReqT");
+            // Start
+            if (ret.Start != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConReq.Start");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ConReq", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ConReq((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ConReq ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ConReq();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ConReq").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ConReq", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -284,16 +372,33 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      ((ConReq)obj).Start = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq  ret){
+            // ConResCtxt
+            if (ret.ConResCtxt != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq.ConResCtxt");
+            // nrCons
+            if (ret.nrCons != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq.nrCons");
+            // srcDir
+            if (ret.srcDir != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq.srcDir");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -305,14 +410,17 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  java.lang.String[] arrayList = new java.lang.String[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
-                        arrayList.add(value.string());
+                        arrayList[i] = (value.string());
                   }                                                                   
-                  ((ConScrReq)obj).ConResCtxt = (java.lang.String[])arrayList.toArray(new java.lang.String[0]);
+                  arr.close();        
+                  ((ConScrReq)obj).ConResCtxt = arrayList;
                }
             // nrCons
             if ((value = structure.property("nrCons")) != null)
@@ -330,16 +438,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((ConScrReq)obj).srcDir = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq  ret){
+            // ReqLoc
+            if (ret.ReqLoc != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq.ReqLoc");
+            // id
+            if (ret.id != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq.id");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq ret = new it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -367,16 +489,33 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((LocValReq)obj).id = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ConRes", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ConRes>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ConRes  ret){
+            // ConResCtxt
+            if (ret.ConResCtxt != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConRes.ConResCtxt");
+            // ConnectionList
+            if (ret.ConnectionList != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConRes.ConnectionList");
+            // dir
+            if (ret.dir != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConRes.dir");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ConRes", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ConRes((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ConRes ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ConRes();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ConRes").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ConRes", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -388,14 +527,17 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  java.lang.String[] arrayList = new java.lang.String[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
-                        arrayList.add(value.string());
+                        arrayList[i] = (value.string());
                   }                                                                   
-                  ((ConRes)obj).ConResCtxt = (java.lang.String[])arrayList.toArray(new java.lang.String[0]);
+                  arr.close();        
+                  ((ConRes)obj).ConResCtxt = arrayList;
                }
             // ConnectionList
             if ((value = structure.property("ConnectionList")) != null)
@@ -420,16 +562,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((ConRes)obj).dir = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes  ret){
+            // Station
+            if (ret.Station != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes.Station");
+            // id
+            if (ret.id != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes.id");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes ret = new it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -441,23 +597,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.Station[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.Station[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("Station"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("Station"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((LocValRes)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.Station[0]);
+                  arr.close();        
+                  ((LocValRes)obj).Station = arrayList;
                }
             // id
             if ((value = structure.property("id")) != null)
@@ -467,16 +627,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((LocValRes)obj).id = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest  ret){
+            // Prod
+            if (ret.Prod != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest.Prod");
+            // Station
+            if (ret.Station != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest.Station");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -488,23 +662,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.Prod[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.Prod[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Prod)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("Prod"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("Prod"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Prod)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ConReqStartDest)obj).Prod = (it.bz.tis.sasabus.backend.shared.travelplanner.Prod[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.Prod[0]);
+                  arr.close();        
+                  ((ConReqStartDest)obj).Prod = arrayList;
                }
             // Station
             if ((value = structure.property("Station")) != null)
@@ -521,16 +699,36 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      ((ConReqStartDest)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.RFlags", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.RFlags>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.RFlags  ret){
+            // b
+            if (ret.b != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.RFlags.b");
+            // chExtension
+            if (ret.chExtension != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.RFlags.chExtension");
+            // f
+            if (ret.f != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.RFlags.f");
+            // sMode
+            if (ret.sMode != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.RFlags.sMode");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.RFlags", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.RFlags((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.RFlags ret = new it.bz.tis.sasabus.backend.shared.travelplanner.RFlags();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.RFlags").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.RFlags", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -567,16 +765,33 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((RFlags)obj).sMode = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ReqT", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ReqT>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ReqT  ret){
+            // a
+            if (ret.a != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqT.a");
+            // date
+            if (ret.date != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqT.date");
+            // time
+            if (ret.time != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqT.time");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ReqT", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ReqT((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ReqT ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ReqT();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ReqT").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ReqT", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -605,16 +820,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((ReqT)obj).time = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc  ret){
+            // match
+            if (ret.match != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc.match");
+            // type
+            if (ret.type != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc.type");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -635,16 +864,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((ReqLoc)obj).type = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList  ret){
+            // Connection
+            if (ret.Connection != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList.Connection");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -656,34 +896,64 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.Connection[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.Connection[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Connection)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("Connection"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("Connection"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Connection)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ConnectionList)obj).Connection = (it.bz.tis.sasabus.backend.shared.travelplanner.Connection[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.Connection[0]);
+                  arr.close();        
+                  ((ConnectionList)obj).Connection = arrayList;
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Station", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Station>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Station  ret){
+            // externalId
+            if (ret.externalId != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Station.externalId");
+            // externalStationNr
+            if (ret.externalStationNr != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Station.externalStationNr");
+            // name
+            if (ret.name != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Station.name");
+            // type
+            if (ret.type != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Station.type");
+            // x
+            if (ret.x != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Station.x");
+            // y
+            if (ret.y != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Station.y");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Station", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Station((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Station ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Station();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Station").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Station", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -736,16 +1006,36 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((Station)obj).y = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Prod", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Prod>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Prod  ret){
+            // bike
+            if (ret.bike != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Prod.bike");
+            // couchette
+            if (ret.couchette != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Prod.couchette");
+            // direct
+            if (ret.direct != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Prod.direct");
+            // sleeper
+            if (ret.sleeper != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Prod.sleeper");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Prod", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Prod((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Prod ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Prod();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Prod").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Prod", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -782,16 +1072,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((Prod)obj).sleeper = (int)value.integer();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Connection", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Connection>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Connection  ret){
+            // ConSectionList
+            if (ret.ConSectionList != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Connection.ConSectionList");
+            // Overview
+            if (ret.Overview != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Connection.Overview");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Connection", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Connection((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Connection ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Connection();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Connection").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Connection", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -826,16 +1130,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      ((Connection)obj).Overview = (it.bz.tis.sasabus.backend.shared.travelplanner.Overview)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList  ret){
+            // ConSection
+            if (ret.ConSection != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList.ConSection");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -847,34 +1162,58 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.ConSection[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.ConSection[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.ConSection)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("ConSection"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("ConSection"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.ConSection)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ConSectionList)obj).ConSection = (it.bz.tis.sasabus.backend.shared.travelplanner.ConSection[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.ConSection[0]);
+                  arr.close();        
+                  ((ConSectionList)obj).ConSection = arrayList;
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Overview", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Overview>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Overview  ret){
+            // Arrival
+            if (ret.Arrival != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Overview.Arrival");
+            // Departure
+            if (ret.Departure != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Overview.Departure");
+            // Duration
+            if (ret.Duration != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Overview.Duration");
+            // Transfers
+            if (ret.Transfers != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Overview.Transfers");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Overview", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Overview((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Overview ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Overview();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Overview").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Overview", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -932,16 +1271,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((Overview)obj).Transfers = (int)value.integer();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.ConSection", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.ConSection>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.ConSection  ret){
+            // Journey
+            if (ret.Journey != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConSection.Journey");
+            // Walk
+            if (ret.Walk != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.ConSection.Walk");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.ConSection", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.ConSection((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.ConSection ret = new it.bz.tis.sasabus.backend.shared.travelplanner.ConSection();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.ConSection").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.ConSection", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -953,23 +1306,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.Journey[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.Journey[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Journey)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("Journey"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("Journey"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Journey)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ConSection)obj).Journey = (it.bz.tis.sasabus.backend.shared.travelplanner.Journey[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.Journey[0]);
+                  arr.close();        
+                  ((ConSection)obj).Journey = arrayList;
                }
             // Walk
             if ((value = structure.property("Walk")) != null)
@@ -978,34 +1335,49 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.Walk[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.Walk[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Walk)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("Walk"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("Walk"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.Walk)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((ConSection)obj).Walk = (it.bz.tis.sasabus.backend.shared.travelplanner.Walk[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.Walk[0]);
+                  arr.close();        
+                  ((ConSection)obj).Walk = arrayList;
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Arrival", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Arrival>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Arrival  ret){
+            // BasicStop
+            if (ret.BasicStop != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Arrival.BasicStop");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Arrival", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Arrival((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Arrival ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Arrival();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Arrival").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Arrival", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1025,16 +1397,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      ((Arrival)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Departure", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Departure>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Departure  ret){
+            // BasicStop
+            if (ret.BasicStop != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Departure.BasicStop");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Departure", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Departure((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Departure ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Departure();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Departure").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Departure", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1054,16 +1437,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      ((Departure)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Duration", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Duration>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Duration  ret){
+            // Time
+            if (ret.Time != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Duration.Time");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Duration", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Duration((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Duration ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Duration();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Duration").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Duration", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1076,16 +1470,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((Duration)obj).Time = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Journey", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Journey>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Journey  ret){
+            // JourneyAttributeList
+            if (ret.JourneyAttributeList != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Journey.JourneyAttributeList");
+            // PassList
+            if (ret.PassList != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Journey.PassList");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Journey", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Journey((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Journey ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Journey();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Journey").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Journey", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1120,16 +1528,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      ((Journey)obj).PassList = (it.bz.tis.sasabus.backend.shared.travelplanner.PassList)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Walk", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Walk>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Walk  ret){
+            // Duration
+            if (ret.Duration != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Walk.Duration");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Walk", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Walk((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Walk ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Walk();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Walk").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Walk", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1149,16 +1568,33 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      ((Walk)obj).Duration = (it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop  ret){
+            // Arr
+            if (ret.Arr != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop.Arr");
+            // Dep
+            if (ret.Dep != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop.Dep");
+            // Station
+            if (ret.Station != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop.Station");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop ret = new it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1208,16 +1644,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      ((BasicStop)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList  ret){
+            // JourneyAttribute
+            if (ret.JourneyAttribute != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList.JourneyAttribute");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList ret = new it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1229,34 +1676,49 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("JourneyAttribute"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("JourneyAttribute"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((JourneyAttributeList)obj).JourneyAttribute = (it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute[0]);
+                  arr.close();        
+                  ((JourneyAttributeList)obj).JourneyAttribute = arrayList;
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.PassList", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.PassList>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.PassList  ret){
+            // BasicStop
+            if (ret.BasicStop != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.PassList.BasicStop");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.PassList", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.PassList((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.PassList ret = new it.bz.tis.sasabus.backend.shared.travelplanner.PassList();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.PassList").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.PassList", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1268,34 +1730,49 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("BasicStop"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("BasicStop"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((PassList)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop[0]);
+                  arr.close();        
+                  ((PassList)obj).BasicStop = arrayList;
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration  ret){
+            // Time
+            if (ret.Time != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration.Time");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration ret = new it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1308,16 +1785,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((WalkDuration)obj).Time = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.DepArr", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.DepArr>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.DepArr  ret){
+            // Time
+            if (ret.Time != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.DepArr.Time");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.DepArr", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.DepArr((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.DepArr ret = new it.bz.tis.sasabus.backend.shared.travelplanner.DepArr();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.DepArr").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.DepArr", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1330,16 +1818,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((DepArr)obj).Time = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute  ret){
+            // Attribute
+            if (ret.Attribute != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute.Attribute");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute ret = new it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1359,16 +1858,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      ((JourneyAttribute)obj).Attribute = (it.bz.tis.sasabus.backend.shared.travelplanner.Attribute)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.Attribute", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.Attribute>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.Attribute  ret){
+            // AttributeVariant
+            if (ret.AttributeVariant != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Attribute.AttributeVariant");
+            // type
+            if (ret.type != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.Attribute.type");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.Attribute", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.Attribute((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.Attribute ret = new it.bz.tis.sasabus.backend.shared.travelplanner.Attribute();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.Attribute").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.Attribute", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1380,23 +1893,27 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant[] arrayList = new it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("AttributeVariant"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("AttributeVariant"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((Attribute)obj).AttributeVariant = (it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant[])arrayList.toArray(new it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant[0]);
+                  arr.close();        
+                  ((Attribute)obj).AttributeVariant = arrayList;
                }
             // type
             if ((value = structure.property("type")) != null)
@@ -1406,16 +1923,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((Attribute)obj).type = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant  ret){
+            // Text
+            if (ret.Text != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant.Text");
+            // type
+            if (ret.type != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant.type");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant((Void)null);
+            it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant ret = new it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -1436,6 +1967,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                {
                   ((AttributeVariant)obj).type = value.string();
                }
+            structure.close();
          }
       });
 

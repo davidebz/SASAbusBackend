@@ -24,9 +24,6 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class RFlags
 {
-   RFlags(Void void1)
-   {
-   }
 
    public RFlags()
    {

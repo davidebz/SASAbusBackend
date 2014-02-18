@@ -24,11 +24,11 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class AttributeVariant
 {
-   AttributeVariant(Void void1)
+   AttributeVariant()
    {
    }
 
-   String type = "";
+   String type;
    String Text;
 
    public String getText()

@@ -26,7 +26,7 @@ public class Arrival
 {
    BasicStop BasicStop;
 
-   protected Arrival(Void void1)
+   protected Arrival()
    {
    }
 

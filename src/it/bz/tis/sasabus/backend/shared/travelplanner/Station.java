@@ -24,7 +24,7 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class Station
 {
-   Station(Void void1)
+   Station()
    {
    }
 

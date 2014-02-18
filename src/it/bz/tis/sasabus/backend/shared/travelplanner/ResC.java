@@ -31,10 +31,6 @@ public class ResC
    {
    }
 
-   ResC(Void void1)
-   {
-   }
-
    public LocValRes getLocValRes()
    {
       return this.LocValRes[0];

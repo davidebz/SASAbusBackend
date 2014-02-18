@@ -34,7 +34,7 @@ public class BusTripStopReference
       this.index = index;
    }
 
-   BusTripStopReference(Void void1)
+   BusTripStopReference()
    {
    }
 

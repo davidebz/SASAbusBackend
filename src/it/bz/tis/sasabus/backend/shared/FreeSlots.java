@@ -23,7 +23,7 @@ public class FreeSlots
 {
    int slots;
 
-   protected FreeSlots(Void void1)
+   protected FreeSlots()
    {
    }
 

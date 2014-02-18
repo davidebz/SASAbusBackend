@@ -27,7 +27,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                java.util.ArrayList arrayList = (java.util.ArrayList)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("news").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("news").array(arrayList.size());        
                for (Object o: arrayList) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -55,7 +55,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                it.bz.tis.sasabus.backend.shared.BusStationLazy[] rawarray = (it.bz.tis.sasabus.backend.shared.BusStationLazy[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStations").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStations").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -82,7 +82,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                it.bz.tis.sasabus.backend.shared.BusLine[] rawarray = (it.bz.tis.sasabus.backend.shared.BusLine[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -109,7 +109,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                it.bz.tis.sasabus.backend.shared.Area[] rawarray = (it.bz.tis.sasabus.backend.shared.Area[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("areas").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("areas").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -144,7 +144,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                it.bz.tis.sasabus.backend.shared.BusTripStopReference[] rawarray = (it.bz.tis.sasabus.backend.shared.BusTripStopReference[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busTripStops").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busTripStops").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -250,7 +250,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                java.util.ArrayList arrayList = (java.util.ArrayList)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("linienliste").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("linienliste").array(arrayList.size());        
                for (Object o: arrayList) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -347,7 +347,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                it.bz.tis.sasabus.backend.shared.BusStop[] rawarray = (it.bz.tis.sasabus.backend.shared.BusStop[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStops").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStops").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -390,7 +390,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                it.bz.tis.sasabus.backend.shared.BusLine[] rawarray = (it.bz.tis.sasabus.backend.shared.BusLine[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -531,7 +531,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                it.bz.tis.sasabus.backend.shared.BusTripStop[] rawarray = (it.bz.tis.sasabus.backend.shared.BusTripStop[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busTripStop").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busTripStop").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -590,7 +590,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                it.bz.tis.sasabus.backend.shared.BusLine[] rawarray = (it.bz.tis.sasabus.backend.shared.BusLine[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -604,7 +604,7 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                it.bz.tis.sasabus.backend.shared.BusStop[] rawarray = (it.bz.tis.sasabus.backend.shared.BusStop[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStops").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStops").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                

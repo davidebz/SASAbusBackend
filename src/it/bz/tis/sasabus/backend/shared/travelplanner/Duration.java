@@ -24,7 +24,7 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class Duration
 {
-   protected Duration(Void void1)
+   protected Duration()
    {
    }
 

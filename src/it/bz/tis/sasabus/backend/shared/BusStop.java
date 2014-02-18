@@ -68,7 +68,7 @@ public class BusStop
       busStation.busStops = stops.toArray(new BusStop[0]);
    }
 
-   BusStop(Void void1)
+   BusStop()
    {
    }
 

@@ -26,9 +26,9 @@ public class LocValRes
 {
 
    String    id;
-   Station[] Station = new Station[0];
+   Station[] Station;
 
-   LocValRes(Void void1)
+   LocValRes()
    {
    }
 

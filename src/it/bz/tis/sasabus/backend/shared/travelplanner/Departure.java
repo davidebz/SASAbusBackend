@@ -26,7 +26,7 @@ public class Departure
 {
    BasicStop BasicStop;
 
-   protected Departure(Void void1)
+   protected Departure()
    {
    }
 

@@ -43,7 +43,7 @@ public class AreaList
       this.lastModified = lastModified;
    }
 
-   AreaList(Void void1)
+   AreaList()
    {
       super();
 

@@ -24,7 +24,7 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class BasicStop
 {
-   public BasicStop(Void void1)
+   public BasicStop()
    {
    }
 

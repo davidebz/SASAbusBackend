@@ -28,10 +28,6 @@ public class Prod
    {
    }
 
-   Prod(Void void1)
-   {
-   }
-
    int bike      = 0;
    int couchette = 0;
    int direct    = 0;

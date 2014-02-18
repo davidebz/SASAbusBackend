@@ -28,10 +28,6 @@ public class ReqLoc
    {
    }
 
-   ReqLoc(Void void1)
-   {
-   }
-
    String match = "(Bolzano) via S. Geltrude 1 - (Bozen) St. Gertraudweg 1";
    String type  = "ST";
 }

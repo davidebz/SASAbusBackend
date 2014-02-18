@@ -26,11 +26,7 @@ import java.util.ArrayList;
  */
 public class NewsList
 {
-   ArrayList<News> news = new ArrayList<News>();
-
-   NewsList(Void void1)
-   {
-   }
+   ArrayList<News> news;
 
    public NewsList()
    {

@@ -52,7 +52,7 @@ public class BusLine
 
    }
 
-   BusLine(Void void1)
+   BusLine()
    {
    }
 
@@ -70,7 +70,6 @@ public class BusLine
    {
       return this.area;
    }
-
 
    private static String confrontableBusLineNumber(String num)
    {

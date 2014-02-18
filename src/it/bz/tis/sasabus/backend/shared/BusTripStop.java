@@ -38,7 +38,7 @@ public class BusTripStop
 
    }
 
-   BusTripStop(Void void1)
+   BusTripStop()
    {
    }
 

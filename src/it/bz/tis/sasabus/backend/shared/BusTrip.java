@@ -26,17 +26,17 @@ public class BusTrip
 {
    int           id;
    String        runningDays;
-   BusTripStop[] busTripStop = new BusTripStop[0];
+   BusTripStop[] busTripStop;
 
    // reverse relation
    int           areaId;
    int           busLineId;
 
    // Derived
-   int           startHHMMSS = 999999;
-   int           endHHMMSS   = 000000;
+   int           startHHMMSS;
+   int           endHHMMSS;
 
-   BusTrip(Void void1)
+   protected BusTrip()
    {
    }
 
@@ -47,6 +47,10 @@ public class BusTrip
       this.runningDays = runningDays;
       this.areaId = areaId;
       this.busLineId = busLineId;
+
+      busTripStop = new BusTripStop[0];
+      startHHMMSS = 999999;
+      endHHMMSS = 000000;
    }
 
    public int getId()

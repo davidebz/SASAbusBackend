@@ -24,7 +24,7 @@ package it.bz.tis.sasabus.backend.shared.travelplanner;
  */
 public class ConSectionList
 {
-   ConSectionList(Void void1)
+   ConSectionList()
    {
    }
 

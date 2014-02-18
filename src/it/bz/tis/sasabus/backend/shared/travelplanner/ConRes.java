@@ -26,9 +26,9 @@ public class ConRes
 {
    String         dir;
    ConnectionList ConnectionList;
-   String[]       ConResCtxt = new String[0];
+   String[]       ConResCtxt;
 
-   protected ConRes(Void void1)
+   protected ConRes()
    {
 
    }

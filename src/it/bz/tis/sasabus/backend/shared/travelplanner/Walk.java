@@ -30,10 +30,6 @@ public class Walk
    {
    }
 
-   Walk(Void void1)
-   {
-   }
-
    public WalkDuration getDuration()
    {
       return this.Duration;

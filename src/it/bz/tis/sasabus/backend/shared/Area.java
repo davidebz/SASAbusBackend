@@ -30,7 +30,7 @@ public class Area
    String    name_it;
    String    name_de;
 
-   BusLine[] busLines = new BusLine[0];
+   BusLine[] busLines;
 
    public Area(int id, String name_it, String name_de)
    {
@@ -38,9 +38,10 @@ public class Area
       this.id = id;
       this.name_it = name_it;
       this.name_de = name_de;
+      busLines = new BusLine[0];
    }
 
-   Area(Void void1)
+   Area()
    {
    }
 
@@ -111,7 +112,8 @@ public class Area
       return uniqueBusStations.keySet().toArray(new BusStation[0]);
    }
 
-   private static Double[] boundLats_bz = new Double[] { 46.4949475,
+   public static Double[] boundLats_bz = new Double[]{
+            46.4949475,
             46.49189125,
             46.488835,
             46.48781625,
@@ -154,7 +156,8 @@ public class Area
             46.513896249999995,
             46.514915,
             46.495966249999995         };
-   private static Double[] boundLons_bz = new Double[] { 11.39085625,
+   public static Double[] boundLons_bz = new Double[]{
+            11.39085625,
             11.3988,
             11.407,
             11.407,
@@ -198,7 +201,8 @@ public class Area
             11.3578,
             11.3839375                 };
 
-   private static Double[] boundLats_me = new Double[] { 46.6709325,
+   public static Double[] boundLats_me = new Double[]{
+            46.6709325,
             46.6709325,
             46.66992,
             46.660807500000004,
@@ -278,7 +282,8 @@ public class Area
             46.688955,
             46.6838925,
             46.680855                  };
-   private static Double[] boundLons_me = new Double[] { 11.20099,
+   public static Double[] boundLons_me = new Double[]{
+            11.20099,
             11.208875,
             11.208875,
             11.2028575,
@@ -359,7 +364,8 @@ public class Area
             11.188955,
             11.188955                  };
 
-   private static Double[] boundLats_su = new Double[] { 46.493,
+   public static Double[] boundLats_su = new Double[]{
+            46.493,
             46.50983,
             46.51894625,
             46.528997499999996,
@@ -390,7 +396,8 @@ public class Area
             46.495805,
             46.493935                  };
 
-   private static Double[] boundLons_su = new Double[] { 11.31083,
+   public static Double[] boundLons_su = new Double[]{
+            11.31083,
             11.27384,
             11.259799999999998,
             11.249,
