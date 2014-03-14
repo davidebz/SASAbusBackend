@@ -2,6 +2,7 @@
 SASAbusBackend - SASA bus JSON services
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -37,7 +38,6 @@ import it.bz.tis.sasabus.backend.shared.travelplanner.ConRes;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ReqC;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ResC;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -45,11 +45,9 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-
 import bz.davide.dmxmljson.marshalling.xml.PrimitiveTypePolicy;
 import bz.davide.dmxmljson.marshalling.xml.XMLStructure;
 import bz.davide.dmxmljson.marshalling.xml.XMLStructureRules;
@@ -61,13 +59,13 @@ import bz.davide.dmxmljson.unmarshalling.xml.W3CXMLStructure;
 public class SASAbusDBServerImpl implements SASAbusDB
 {
 
-   String                                           firstDay;
-   long                                             lastModified;
+   String                                                     firstDay;
+   protected long                                             lastModified;
 
-   Area[]                                           areas;
-   HashMap<String, BusStation>                      busStationsById           = new HashMap<String, BusStation>();
+   protected Area[]                                           areas;
+   protected HashMap<String, BusStation>                      busStationsById           = new HashMap<String, BusStation>();
 
-   HashMap<String, ArrayList<BusTripStopReference>> busTripStopByBusStationId = new HashMap<String, ArrayList<BusTripStopReference>>();
+   protected HashMap<String, ArrayList<BusTripStopReference>> busTripStopByBusStationId = new HashMap<String, ArrayList<BusTripStopReference>>();
 
    @Override
    public void lastModified(SASAbusDBDataReady<SASAbusDBLastModified> response)
@@ -81,27 +79,6 @@ public class SASAbusDBServerImpl implements SASAbusDB
       response.ready(new AreaList(this.areas, this.lastModified));
    }
 
-   private int daysBetween(String start_yyyymmdd, String end_yyyymmdd)
-   {
-      return (int) (this.daysFrom1970(end_yyyymmdd) - this.daysFrom1970(start_yyyymmdd));
-   }
-
-   private long daysFrom1970(String yyyymmdd)
-   {
-      Calendar calendar = Calendar.getInstance();
-      calendar.setLenient(false);
-      calendar.set(Calendar.YEAR, Integer.parseInt(yyyymmdd.substring(0, 4)));
-      calendar.set(Calendar.MONTH, Integer.parseInt(yyyymmdd.substring(4, 6)) - 1);
-      calendar.set(Calendar.DAY_OF_MONTH, Integer.parseInt(yyyymmdd.substring(6, 8)));
-      calendar.set(Calendar.HOUR_OF_DAY, 8); // don't use midnight, daylight saving time can cross date
-      calendar.set(Calendar.MINUTE, 0);
-      calendar.set(Calendar.SECOND, 0);
-      calendar.set(Calendar.MILLISECOND, 0);
-      long millis = calendar.getTimeInMillis();
-      long days = millis / (1000L * 60L * 60L * 24L);
-      return days;
-   }
-
    @Override
    public void findBusStationDepartures(String busStationId,
                                         long yyyymmddhhmm,
@@ -113,23 +90,21 @@ public class SASAbusDBServerImpl implements SASAbusDB
          @Override
          public int compare(BusTripStopReference o1, BusTripStopReference o2)
          {
-            return o1.getBusTrip().getBusTripStops()[o1.getIndex()].getTimeHHMMSS() -
-                   o2.getBusTrip().getBusTripStops()[o2.getIndex()].getTimeHHMMSS();
+            return o1.getBusTrip().getBusTripStops()[o1.getIndex()].getTimeHHMMSS()
+                   - o2.getBusTrip().getBusTripStops()[o2.getIndex()].getTimeHHMMSS();
          }
       });
 
       ArrayList<BusTripStopReference> responseBusTripStops = new ArrayList<BusTripStopReference>();
       int time = (int) (yyyymmddhhmm % 10000L) * 100;
       String date = String.valueOf(yyyymmddhhmm / 10000L);
-      int dayIndex = this.daysBetween(this.firstDay, date);
       int count = 0;
       for (int i = 0; i < busTripStops.size(); i++)
       {
          BusTripStopReference busTripStopRef = busTripStops.get(i);
          BusTripStop busTripStop = busTripStopRef.getBusTrip().getBusTripStops()[busTripStopRef.getIndex()];
-         String runningDays = busTripStopRef.getBusTrip().getRunningDays();
-         char dayBit = runningDays.charAt(dayIndex);
-         if (dayBit == '1')
+         boolean isRunningDay = busTripStopRef.getBusTrip().getIsRunningAtDay().isRunning(date);
+         if (isRunningDay)
          {
             int stopTime = busTripStop.getTimeHHMMSS();
             if (stopTime >= time)

@@ -64,60 +64,6 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             structure.close();
          }
       });
-      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.BusStationList", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.BusStationList>() {
-         @Override public void check(it.bz.tis.sasabus.backend.shared.BusStationList  ret){
-            // busStations
-            if (ret.busStations != null)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.BusStationList.busStations");
-         }
-      });
-      this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.BusStationList", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
-         @Override public Object newInstance() throws Exception {
-            it.bz.tis.sasabus.backend.shared.BusStationList ret = new it.bz.tis.sasabus.backend.shared.BusStationList();
-            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.BusStationList").check(ret);
-            return ret;
-         }
-      });
-
-      this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.BusStationList", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
-         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            structure.open();
-            String id = structure.getId();
-            if (id != null)
-               identities.put(id, obj);
-            bz.davide.dmxmljson.unmarshalling.Value value;
-            // busStations
-            if ((value = structure.property("busStations")) != null)
-               if (value.isNull())
-                  ((BusStationList)obj).busStations = null;
-               else
-               {
-                  bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  arr.open();        
-                  it.bz.tis.sasabus.backend.shared.BusStationLazy[] arrayList = new it.bz.tis.sasabus.backend.shared.BusStationLazy[arr.length()];       
-                  for (int i = 0; i < arrayList.length; i++) {                       
-                     value = arr.nextItem();                                       
-                     if (value.isNull())                                           
-                        arrayList[i] = null;                                       
-                     else                                                          
-                     {                                                                   
-                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
-                        String refid = tmpStructure.getRefId();    
-                        if (refid != null)                              
-                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.BusStationLazy)(identities.get(refid));                                                
-                        else {
-                           Object o = newInstance(tmpStructure.getRuntimeClassName("BusStationLazy"));              
-                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
-                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.BusStationLazy)(o);                                                
-                        }
-                     }                                                                   
-                  }                                                                   
-                  arr.close();        
-                  ((BusStationList)obj).busStations = arrayList;
-               }
-            structure.close();
-         }
-      });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.BusLineList", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.BusLineList>() {
          @Override public void check(it.bz.tis.sasabus.backend.shared.BusLineList  ret){
             // busLines
@@ -499,50 +445,6 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             structure.close();
          }
       });
-      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.BusStationLazy", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.BusStationLazy>() {
-         @Override public void check(it.bz.tis.sasabus.backend.shared.BusStationLazy  ret){
-            // name_de
-            if (ret.name_de != null)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.BusStationLazy.name_de");
-            // name_it
-            if (ret.name_it != null)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.BusStationLazy.name_it");
-         }
-      });
-      this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.BusStationLazy", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
-         @Override public Object newInstance() throws Exception {
-            it.bz.tis.sasabus.backend.shared.BusStationLazy ret = new it.bz.tis.sasabus.backend.shared.BusStationLazy();
-            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.BusStationLazy").check(ret);
-            return ret;
-         }
-      });
-
-      this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.BusStationLazy", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
-         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            structure.open();
-            String id = structure.getId();
-            if (id != null)
-               identities.put(id, obj);
-            bz.davide.dmxmljson.unmarshalling.Value value;
-            // name_de
-            if ((value = structure.property("name_de")) != null)
-               if (value.isNull())
-                  ((BusStationLazy)obj).name_de = null;
-               else
-               {
-                  ((BusStationLazy)obj).name_de = value.string();
-               }
-            // name_it
-            if ((value = structure.property("name_it")) != null)
-               if (value.isNull())
-                  ((BusStationLazy)obj).name_it = null;
-               else
-               {
-                  ((BusStationLazy)obj).name_it = value.string();
-               }
-            structure.close();
-         }
-      });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.BusLine", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.BusLine>() {
          @Override public void check(it.bz.tis.sasabus.backend.shared.BusLine  ret){
             // area
@@ -639,6 +541,9 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
       });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.Area", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.Area>() {
          @Override public void check(it.bz.tis.sasabus.backend.shared.Area  ret){
+            // bounds
+            if (ret.bounds != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.Area.bounds");
             // busLines
             if (ret.busLines != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.Area.busLines");
@@ -668,6 +573,35 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            // bounds
+            if ((value = structure.property("bounds")) != null)
+               if (value.isNull())
+                  ((Area)obj).bounds = null;
+               else
+               {
+                  bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.LatLng[] arrayList = new it.bz.tis.sasabus.backend.shared.LatLng[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
+                     if (value.isNull())                                           
+                        arrayList[i] = null;                                       
+                     else                                                          
+                     {                                                                   
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
+                        if (refid != null)                              
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.LatLng)(identities.get(refid));                                                
+                        else {
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("LatLng"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.LatLng)(o);                                                
+                        }
+                     }                                                                   
+                  }                                                                   
+                  arr.close();        
+                  ((Area)obj).bounds = arrayList;
+               }
             // busLines
             if ((value = structure.property("busLines")) != null)
                if (value.isNull())
@@ -848,11 +782,52 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             structure.close();
          }
       });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.LatLng", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.LatLng>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.LatLng  ret){
+            // lat
+            if (ret.lat != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.LatLng.lat");
+            // lon
+            if (ret.lon != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.LatLng.lon");
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.LatLng", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.backend.shared.LatLng ret = new it.bz.tis.sasabus.backend.shared.LatLng();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.LatLng").check(ret);
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.LatLng", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // lat
+            if ((value = structure.property("lat")) != null)
+               if (value.isNull())
+                  new RuntimeException("Impossibile value for primitive type");
+               else
+               {
+                  ((LatLng)obj).lat = value.decimal();
+               }
+            // lon
+            if ((value = structure.property("lon")) != null)
+               if (value.isNull())
+                  new RuntimeException("Impossibile value for primitive type");
+               else
+               {
+                  ((LatLng)obj).lon = value.decimal();
+               }
+            structure.close();
+         }
+      });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.BusTrip", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.BusTrip>() {
          @Override public void check(it.bz.tis.sasabus.backend.shared.BusTrip  ret){
-            // areaId
-            if (ret.areaId != 0)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.BusTrip.areaId");
             // busLineId
             if (ret.busLineId != 0)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.BusTrip.busLineId");
@@ -865,9 +840,6 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // id
             if (ret.id != 0)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.BusTrip.id");
-            // runningDays
-            if (ret.runningDays != null)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.BusTrip.runningDays");
             // startHHMMSS
             if (ret.startHHMMSS != 0)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.BusTrip.startHHMMSS");
@@ -888,14 +860,6 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
-            // areaId
-            if ((value = structure.property("areaId")) != null)
-               if (value.isNull())
-                  new RuntimeException("Impossibile value for primitive type");
-               else
-               {
-                  ((BusTrip)obj).areaId = (int)value.integer();
-               }
             // busLineId
             if ((value = structure.property("busLineId")) != null)
                if (value.isNull())
@@ -948,14 +912,6 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                else
                {
                   ((BusTrip)obj).id = (int)value.integer();
-               }
-            // runningDays
-            if ((value = structure.property("runningDays")) != null)
-               if (value.isNull())
-                  ((BusTrip)obj).runningDays = null;
-               else
-               {
-                  ((BusTrip)obj).runningDays = value.string();
                }
             // startHHMMSS
             if ((value = structure.property("startHHMMSS")) != null)

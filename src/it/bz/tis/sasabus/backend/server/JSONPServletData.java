@@ -2,6 +2,7 @@
 SASAbusBackend - SASA bus JSON services
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -19,12 +20,17 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.backend.server;
 
-import it.bz.tis.sasabus.backend.server.sasabusdb.SASAbusDBServerImpl;
+import it.bz.tis.sasabus.backend.shared.SASAbusDB;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
 public class JSONPServletData
 {
-   SASAbusDBServerImpl sasabusdb = null;
+   SASAbusDB sasabusdb = null;
+
+   public void setSasabusdb(SASAbusDB sasabusdb)
+   {
+      this.sasabusdb = sasabusdb;
+   }
 }

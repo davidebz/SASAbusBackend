@@ -2,6 +2,7 @@
 SASAbusBackend - SASA bus JSON services
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -24,10 +25,10 @@ import it.bz.tis.sasabus.backend.server.sasabusdb.SASAbusDBServerImpl;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusTripStopList;
 import it.bz.tis.sasabus.backend.shared.SASAbusBackendMarshaller;
+import it.bz.tis.sasabus.backend.shared.SASAbusDB;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBLastModified;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConRes;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,7 +39,6 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URL;
 import java.util.Properties;
-
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
@@ -50,27 +50,26 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import bz.davide.dmxmljson.marshalling.json.JSONStructure;
 
 @SuppressWarnings("serial")
 public class SASAbusDB2JSONPServlet extends HttpServlet
 {
 
-   final JSONPServletData   data         = new JSONPServletData();
+   protected final JSONPServletData data         = new JSONPServletData();
 
-   SASAbusBackendMarshaller marshaller   = new SASAbusBackendMarshaller();
+   SASAbusBackendMarshaller         marshaller   = new SASAbusBackendMarshaller();
 
-   boolean                  initFinished = false;
+   protected boolean                initFinished = false;
 
-   File                     local_md5_file;
-   File                     local_db_file;
-   URL                      remote_md5_url;
-   URL                      remote_db_url;
+   File                             local_md5_file;
+   File                             local_db_file;
+   URL                              remote_md5_url;
+   URL                              remote_db_url;
 
-   Thread                   checkUpdateThread;
+   Thread                           checkUpdateThread;
 
-   String                   smtpPass;
+   String                           smtpPass;
 
    @Override
    public void init(ServletConfig config) throws ServletException
@@ -114,8 +113,7 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
                      if (count < 3)
                      {
                         count++;
-                        SASAbusDB2JSONPServlet.this.sendMail("checkUpdateThread: sleep count", "count: " +
-                                                                                               count);
+                        SASAbusDB2JSONPServlet.this.sendMail("checkUpdateThread: sleep count", "count: " + count);
                      }
                      try
                      {
@@ -187,7 +185,7 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
       this.sendMail(subject, stringWriter.getBuffer().toString());
    }
 
-   void sendMail(String subject, String body)
+   protected void sendMail(String subject, String body)
    {
       // Don't send e-mail if password is empty/missing
       if (this.smtpPass.trim().length() == 0)
@@ -268,11 +266,10 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
    }
 
    @Override
-   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
-                                                                         IOException
+   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
    {
       boolean localInitFinished;
-      SASAbusDBServerImpl sasabusdb;
+      SASAbusDB sasabusdb;
       synchronized (this.data)
       {
          localInitFinished = this.initFinished;
@@ -292,7 +289,7 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
          {
             path = "";
          }
-         final Object[] result = new Object[]{null};
+         final Object[] result = new Object[] { null };
          /*
          if (path.equals("/gc"))
          {
@@ -351,17 +348,14 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
             String startBusStationId = req.getParameter("startBusStationId");
             String endBusStationId = req.getParameter("endBusStationId");
             long yyyymmddhhmm = Long.parseLong(req.getParameter("yyyymmddhhmm"));
-            sasabusdb.calcRoute(startBusStationId,
-                                endBusStationId,
-                                yyyymmddhhmm,
-                                new SASAbusDBDataReady<ConRes>()
-                                {
-                                   @Override
-                                   public void ready(ConRes data)
-                                   {
-                                      result[0] = data;
-                                   }
-                                });
+            sasabusdb.calcRoute(startBusStationId, endBusStationId, yyyymmddhhmm, new SASAbusDBDataReady<ConRes>()
+            {
+               @Override
+               public void ready(ConRes data)
+               {
+                  result[0] = data;
+               }
+            });
 
          }
          if (path.equals("/nextRoute"))
@@ -400,7 +394,9 @@ public class SASAbusDB2JSONPServlet extends HttpServlet
 
             long stop3 = System.currentTimeMillis();
 
+            return;
          }
+         throw new ServletException("No result! " + path);
 
       }
       catch (Exception exxx)

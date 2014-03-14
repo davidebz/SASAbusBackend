@@ -2,6 +2,7 @@
 SASAbusBackend - SASA bus JSON services
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -24,33 +25,31 @@ package it.bz.tis.sasabus.backend.shared;
  */
 public class BusTrip
 {
-   int           id;
-   String        runningDays;
-   BusTripStop[] busTripStop;
+   int                              id;
+   transient private IsRunningAtDay runningDays;
+   BusTripStop[]                    busTripStop;
 
    // reverse relation
-   int           areaId;
-   int           busLineId;
+   int                              busLineId;
 
    // Derived
-   int           startHHMMSS;
-   int           endHHMMSS;
+   int                              startHHMMSS;
+   int                              endHHMMSS;
 
    protected BusTrip()
    {
    }
 
-   public BusTrip(int id, String runningDays, int areaId, int busLineId)
+   public BusTrip(int id, IsRunningAtDay runningDays, int busLineId)
    {
       super();
       this.id = id;
       this.runningDays = runningDays;
-      this.areaId = areaId;
       this.busLineId = busLineId;
 
-      busTripStop = new BusTripStop[0];
-      startHHMMSS = 999999;
-      endHHMMSS = 000000;
+      this.busTripStop = new BusTripStop[0];
+      this.startHHMMSS = 999999;
+      this.endHHMMSS = 000000;
    }
 
    public int getId()
@@ -63,12 +62,7 @@ public class BusTrip
       return this.busLineId;
    }
 
-   public int getAreaId()
-   {
-      return this.areaId;
-   }
-
-   public String getRunningDays()
+   public IsRunningAtDay getIsRunningAtDay()
    {
       return this.runningDays;
    }

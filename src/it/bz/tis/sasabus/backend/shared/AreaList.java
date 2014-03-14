@@ -2,6 +2,7 @@
 SASAbusBackend - SASA bus JSON services
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -64,22 +65,28 @@ public class AreaList
       return this.busStopsById.get(id);
    }
 
-   public BusLine findBusLineById(int busid, int areaid)
+   public BusLine findBusLineById(int busid)
    {
+      BusLine ret = null;
       for (Area area : this.areas)
       {
-         if (area.getId() == areaid)
+         for (BusLine busLine : area.getBusLines())
          {
-            for (BusLine busLine : area.getBusLines())
+            if (busLine.getId() == busid)
             {
-               if (busLine.getId() == busid)
+               if (ret != null)
                {
-                  return busLine;
+                  throw new IllegalStateException("Two (or more) BusLine with same id: " + busid);
                }
+               ret = busLine;
             }
          }
       }
-      return null;
+      if (ret == null)
+      {
+         throw new IllegalStateException("BusLine by " + busid + " not found!");
+      }
+      return ret;
    }
 
    public BusStation[] getBusStations()

@@ -1,7 +1,7 @@
 /*
 SASAbusBackend - SASA bus JSON services
 
-Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -19,37 +19,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.backend.shared;
 
-/**
- * @author Davide Montesin <d@vide.bz>
- */
-public class BusStationLazy
+public interface IsRunningAtDay
 {
-   String name_it;
-   String name_de;
-
-   public BusStationLazy(String name_it, String name_de)
-   {
-      super();
-      this.name_it = name_it;
-      this.name_de = name_de;
-   }
-
-   BusStationLazy()
-   {
-   }
-
-   public String getName_de()
-   {
-      return this.name_de;
-   }
-
-   public String getName_it()
-   {
-      return this.name_it;
-   }
-
-   public String getId()
-   {
-      return "";
-   }
+   boolean isRunning(String yyyymmdd);
 }

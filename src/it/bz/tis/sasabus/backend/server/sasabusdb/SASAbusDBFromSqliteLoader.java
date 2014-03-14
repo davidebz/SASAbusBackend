@@ -2,6 +2,7 @@
 SASAbusBackend - SASA bus JSON services
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -26,7 +27,8 @@ import it.bz.tis.sasabus.backend.shared.BusStop;
 import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
 import it.bz.tis.sasabus.backend.shared.BusTripStopReference;
-
+import it.bz.tis.sasabus.backend.shared.LatLng;
+import it.bz.tis.sasabus.backend.shared.SASAIsRunningAtDay;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -51,7 +53,8 @@ public class SASAbusDBFromSqliteLoader
       return sasabusdb;
    }
 
-   private static void loadDataAndMainRelations(SASAbusDBServerImpl sasabusdb, File sqlitePath) throws ClassNotFoundException,
+   private static void loadDataAndMainRelations(SASAbusDBServerImpl sasabusdb, File sqlitePath)
+                                                                                               throws ClassNotFoundException,
                                                                                                SQLException
    {
       Class.forName("org.sqlite.JDBC");
@@ -82,7 +85,8 @@ public class SASAbusDBFromSqliteLoader
    }
 
    private static HashMap<Integer, BusStop> loadBusStationsAndBusStops(Connection conn,
-                                                                       SASAbusDBServerImpl sasabusdb) throws SQLException
+                                                                       SASAbusDBServerImpl sasabusdb)
+                                                                                                     throws SQLException
    {
       HashMap<Integer, BusStop> busStopsById = new HashMap<Integer, BusStop>();
 
@@ -122,7 +126,8 @@ public class SASAbusDBFromSqliteLoader
    private static void loadAreas(Connection conn,
                                  SASAbusDBServerImpl sasabusdb,
                                  HashMap<Integer, BusStop> busStopsById,
-                                 IdentityHashMap<BusStation, IdentityHashMap<BusLine, Void>> busLinesByBusStation) throws SQLException
+                                 IdentityHashMap<BusStation, IdentityHashMap<BusLine, Void>> busLinesByBusStation)
+                                                                                                                  throws SQLException
    {
       ArrayList<Area> areaList = new ArrayList<Area>();
 
@@ -134,7 +139,8 @@ public class SASAbusDBFromSqliteLoader
          String nome_it = rs.getString("nome_it");
          String nome_de = rs.getString("nome_de");
          String prefixTable = rs.getString("nome_table");
-         Area area = new Area(bacino_id, nome_it, nome_de);
+         LatLng[] bounds = new LatLng[0];
+         Area area = new Area(bacino_id, nome_it, nome_de, bounds);
 
          areaList.add(area);
 
@@ -150,15 +156,15 @@ public class SASAbusDBFromSqliteLoader
                                     String prefixTable,
                                     HashMap<Integer, BusStop> busStopsById,
                                     SASAbusDBServerImpl sasabusdb,
-                                    IdentityHashMap<BusStation, IdentityHashMap<BusLine, Void>> busLinesByBusStation) throws SQLException
+                                    IdentityHashMap<BusStation, IdentityHashMap<BusLine, Void>> busLinesByBusStation)
+                                                                                                                     throws SQLException
    {
       String query = "select id, num_lin from " + prefixTable + "linee "; // order complex, maded in java
-
 
       ResultSet rs = conn.createStatement().executeQuery(query);
       while (rs.next())
       {
-         int line_id = rs.getInt("id");
+         int line_id = rs.getInt("id") * 100 + area.getId(); // make id unique for all areas
          String num = rs.getString("num_lin");
          BusLine busLine = new BusLine(line_id, num, area);
          IdentityHashMap<BusStop, Void> busLineUniqueBusStops = new IdentityHashMap<BusStop, Void>();
@@ -176,8 +182,6 @@ public class SASAbusDBFromSqliteLoader
       }
       rs.close();
 
-
-
    }
 
    private static void loadBusTrips(Connection conn,
@@ -186,22 +190,24 @@ public class SASAbusDBFromSqliteLoader
                                     HashMap<Integer, BusStop> busStopsById,
                                     SASAbusDBServerImpl sasabusdb,
                                     IdentityHashMap<BusStop, Void> busLineUniqueBusStops,
-                                    IdentityHashMap<BusStation, IdentityHashMap<BusLine, Void>> busLinesByBusStation) throws SQLException
+                                    IdentityHashMap<BusStation, IdentityHashMap<BusLine, Void>> busLinesByBusStation)
+                                                                                                                     throws SQLException
    {
 
-      String query = "select id, effettuazione from " +
-                     prefixTable +
-                     "corse  where lineaId = " +
-                     busLine.getId() +
-                     " order by orario_partenza";
+      String query = "select id, effettuazione from "
+                     + prefixTable
+                     + "corse  where lineaId = "
+                     + busLine.getId()
+                     + " order by orario_partenza";
 
       ResultSet rs = conn.createStatement().executeQuery(query);
       while (rs.next())
       {
          int trip_id = rs.getInt("id");
          String effettuazione = rs.getString("effettuazione");
-         BusTrip busTrip = new BusTrip(trip_id, effettuazione, busLine.getArea().getId(), busLine.getId());
-
+         BusTrip busTrip = new BusTrip(trip_id,
+                                       new SASAIsRunningAtDay(sasabusdb.firstDay, effettuazione),
+                                       busLine.getId());
 
          loadBusTripStops(conn,
                           busTrip,
@@ -224,13 +230,14 @@ public class SASAbusDBFromSqliteLoader
                                         HashMap<Integer, BusStop> busStopsById,
                                         SASAbusDBServerImpl sasabusdb,
                                         IdentityHashMap<BusStop, Void> busLineUniqueBusStops,
-                                        IdentityHashMap<BusStation, IdentityHashMap<BusLine, Void>> busLinesByBusStation) throws SQLException
+                                        IdentityHashMap<BusStation, IdentityHashMap<BusLine, Void>> busLinesByBusStation)
+                                                                                                                         throws SQLException
    {
-      String query = "select id, palinaId, orario from " +
-                     prefixTable +
-                     "orarii where corsaId = " +
-                     busTrip.getId() +
-                     " order by progressivo";
+      String query = "select id, palinaId, orario from "
+                     + prefixTable
+                     + "orarii where corsaId = "
+                     + busTrip.getId()
+                     + " order by progressivo";
 
       ResultSet rs = conn.createStatement().executeQuery(query);
       ArrayList<BusTripStop> busTripStopList = new ArrayList<BusTripStop>();
@@ -240,11 +247,11 @@ public class SASAbusDBFromSqliteLoader
          int palina_id = rs.getInt("palinaId");
          String time = rs.getString("orario");
          String[] timeParts = time.split(":");
-         int timeHHMMSS = Integer.parseInt(timeParts[2]) +
-                          Integer.parseInt(timeParts[1]) *
-                          100 +
-                          Integer.parseInt(timeParts[0]) *
-                          10000;
+         int timeHHMMSS = Integer.parseInt(timeParts[2])
+                          + Integer.parseInt(timeParts[1])
+                          * 100
+                          + Integer.parseInt(timeParts[0])
+                          * 10000;
 
          BusStop busStop = busStopsById.get(palina_id);
 

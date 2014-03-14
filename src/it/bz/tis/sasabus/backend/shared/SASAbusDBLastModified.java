@@ -2,6 +2,7 @@
 SASAbusBackend - SASA bus JSON services
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -31,7 +32,7 @@ public class SASAbusDBLastModified
       this.timestamp = lastModified;
    }
 
-   public SASAbusDBLastModified()
+   SASAbusDBLastModified()
    {
    }
 

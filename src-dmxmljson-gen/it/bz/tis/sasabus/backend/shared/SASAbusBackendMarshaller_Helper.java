@@ -39,33 +39,6 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
                structure.close();
          }
       });
-      this.putClassMarshaller("it.bz.tis.sasabus.backend.shared.BusStationList", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
-         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
-            if (!superClass) {
-               if (isReference(structure, obj, identities, seq))
-                  return;
-               identities.put(obj, structure);
-               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
-            }
-            Object value;
-            // busStations
-            value = ((it.bz.tis.sasabus.backend.shared.BusStationList)obj).busStations;
-            if (value == null)
-               structure.property("busStations").nullValue();
-            else
-            {
-               it.bz.tis.sasabus.backend.shared.BusStationLazy[] rawarray = (it.bz.tis.sasabus.backend.shared.BusStationLazy[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStations").array(rawarray.length);        
-               for (Object o: rawarray) {                                    
-                  if (o == null)                                              
-                     array.item().nullValue();                                
-                     internalMarschall(o, o.getClass().getName(), "it.bz.tis.sasabus.backend.shared.BusStationLazy", array.item().structure(), identities, seq, false);
-               }                                                              
-            }
-            if (!superClass)
-               structure.close();
-         }
-      });
       this.putClassMarshaller("it.bz.tis.sasabus.backend.shared.BusLineList", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
          @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
             if (!superClass) {
@@ -294,35 +267,6 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
                structure.close();
          }
       });
-      this.putClassMarshaller("it.bz.tis.sasabus.backend.shared.BusStationLazy", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
-         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
-            if (!superClass) {
-               if (isReference(structure, obj, identities, seq))
-                  return;
-               identities.put(obj, structure);
-               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
-            }
-            Object value;
-            // name_de
-            value = ((it.bz.tis.sasabus.backend.shared.BusStationLazy)obj).name_de;
-            if (value == null)
-               structure.property("name_de").nullValue();
-            else
-            {
-                    structure.property("name_de").string((String)value);                          
-            }
-            // name_it
-            value = ((it.bz.tis.sasabus.backend.shared.BusStationLazy)obj).name_it;
-            if (value == null)
-               structure.property("name_it").nullValue();
-            else
-            {
-                    structure.property("name_it").string((String)value);                          
-            }
-            if (!superClass)
-               structure.close();
-         }
-      });
       this.putClassMarshaller("it.bz.tis.sasabus.backend.shared.BusLine", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
          @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
             if (!superClass) {
@@ -383,6 +327,20 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
             Object value;
+            // bounds
+            value = ((it.bz.tis.sasabus.backend.shared.Area)obj).bounds;
+            if (value == null)
+               structure.property("bounds").nullValue();
+            else
+            {
+               it.bz.tis.sasabus.backend.shared.LatLng[] rawarray = (it.bz.tis.sasabus.backend.shared.LatLng[])value;                        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("bounds").array(rawarray.length);        
+               for (Object o: rawarray) {                                    
+                  if (o == null)                                              
+                     array.item().nullValue();                                
+                     internalMarschall(o, o.getClass().getName(), "it.bz.tis.sasabus.backend.shared.LatLng", array.item().structure(), identities, seq, false);
+               }                                                              
+            }
             // busLines
             value = ((it.bz.tis.sasabus.backend.shared.Area)obj).busLines;
             if (value == null)
@@ -499,6 +457,35 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
                structure.close();
          }
       });
+      this.putClassMarshaller("it.bz.tis.sasabus.backend.shared.LatLng", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
+         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
+            if (!superClass) {
+               if (isReference(structure, obj, identities, seq))
+                  return;
+               identities.put(obj, structure);
+               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
+            }
+            Object value;
+            // lat
+            value = ((it.bz.tis.sasabus.backend.shared.LatLng)obj).lat;
+            if (value == null)
+               structure.property("lat").nullValue();
+            else
+            {
+                    structure.property("lat").decimal((Double)value);                          
+            }
+            // lon
+            value = ((it.bz.tis.sasabus.backend.shared.LatLng)obj).lon;
+            if (value == null)
+               structure.property("lon").nullValue();
+            else
+            {
+                    structure.property("lon").decimal((Double)value);                          
+            }
+            if (!superClass)
+               structure.close();
+         }
+      });
       this.putClassMarshaller("it.bz.tis.sasabus.backend.shared.BusTrip", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
          @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
             if (!superClass) {
@@ -508,14 +495,6 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
             Object value;
-            // areaId
-            value = ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).areaId;
-            if (value == null)
-               structure.property("areaId").nullValue();
-            else
-            {
-                    structure.property("areaId").integer((Integer)value);                          
-            }
             // busLineId
             value = ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).busLineId;
             if (value == null)
@@ -553,14 +532,6 @@ public class SASAbusBackendMarshaller_Helper extends bz.davide.dmxmljson.marshal
             else
             {
                     structure.property("id").integer((Integer)value);                          
-            }
-            // runningDays
-            value = ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).runningDays;
-            if (value == null)
-               structure.property("runningDays").nullValue();
-            else
-            {
-                    structure.property("runningDays").string((String)value);                          
             }
             // startHHMMSS
             value = ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).startHHMMSS;

@@ -1,7 +1,7 @@
 /*
 SASAbusBackend - SASA bus JSON services
 
-Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -19,25 +19,30 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.backend.shared;
 
-/**
- * @author Davide Montesin <d@vide.bz>
- */
-public class BusStationList
+public class LatLng
 {
-   BusStationLazy[] busStations;
+   double lat;
+   double lon;
 
-   public BusStationList(BusStationLazy[] busStations)
+   public LatLng(double lat, double lon)
    {
       super();
-      this.busStations = busStations;
+      this.lat = lat;
+      this.lon = lon;
    }
 
-   BusStationList()
+   LatLng()
    {
    }
 
-   public BusStationLazy[] getBusStations()
+   public double getLat()
    {
-      return this.busStations;
+      return this.lat;
    }
+
+   public double getLon()
+   {
+      return this.lon;
+   }
+
 }
