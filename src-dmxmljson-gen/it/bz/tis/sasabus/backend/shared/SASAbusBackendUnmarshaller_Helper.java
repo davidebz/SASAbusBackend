@@ -36,7 +36,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // news
             if ((value = structure.property("news")) != null)
                if (value.isNull())
-                  ((NewsList)obj).news = null;
+                  ((it.bz.tis.sasabus.backend.shared.NewsList)obj).news = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -59,7 +59,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((NewsList)obj).news = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.NewsList)obj).news = arrayList;
                }
             structure.close();
          }
@@ -89,7 +89,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // busLines
             if ((value = structure.property("busLines")) != null)
                if (value.isNull())
-                  ((BusLineList)obj).busLines = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusLineList)obj).busLines = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -113,7 +113,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((BusLineList)obj).busLines = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.BusLineList)obj).busLines = arrayList;
                }
             structure.close();
          }
@@ -146,7 +146,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // areas
             if ((value = structure.property("areas")) != null)
                if (value.isNull())
-                  ((AreaList)obj).areas = null;
+                  ((it.bz.tis.sasabus.backend.shared.AreaList)obj).areas = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -170,7 +170,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((AreaList)obj).areas = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.AreaList)obj).areas = arrayList;
                }
             // lastModified
             if ((value = structure.property("lastModified")) != null)
@@ -178,7 +178,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((AreaList)obj).lastModified = value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.AreaList)obj).lastModified = value.integer();
                }
             structure.close();
          }
@@ -208,7 +208,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // busTripStops
             if ((value = structure.property("busTripStops")) != null)
                if (value.isNull())
-                  ((BusTripStopList)obj).busTripStops = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusTripStopList)obj).busTripStops = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -232,7 +232,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((BusTripStopList)obj).busTripStops = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.BusTripStopList)obj).busTripStops = arrayList;
                }
             structure.close();
          }
@@ -265,7 +265,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((SASAbusDBLastModified)obj).timestamp = value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.SASAbusDBLastModified)obj).timestamp = value.integer();
                }
             structure.close();
          }
@@ -298,7 +298,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((ParkingInfo)obj).slots = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.ParkingInfo)obj).slots = (int)value.integer();
                }
             structure.close();
          }
@@ -331,7 +331,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((FreeSlots)obj).slots = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.FreeSlots)obj).slots = (int)value.integer();
                }
             structure.close();
          }
@@ -379,23 +379,23 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // id
             if ((value = structure.property("id")) != null)
                if (value.isNull())
-                  ((News)obj).id = null;
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).id = null;
                else
                {
-                  ((News)obj).id = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).id = value.string();
                }
             // lastmod
             if ((value = structure.property("lastmod")) != null)
                if (value.isNull())
-                  ((News)obj).lastmod = null;
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).lastmod = null;
                else
                {
-                  ((News)obj).lastmod = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).lastmod = value.string();
                }
             // linienliste
             if ((value = structure.property("linienliste")) != null)
                if (value.isNull())
-                  ((News)obj).linienliste = null;
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).linienliste = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -408,39 +408,39 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                         arrayList.add(value.string());
                   }                                                                   
                   arr.close();        
-                  ((News)obj).linienliste = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).linienliste = arrayList;
                }
             // nachricht_de
             if ((value = structure.property("nachricht_de")) != null)
                if (value.isNull())
-                  ((News)obj).nachricht_de = null;
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).nachricht_de = null;
                else
                {
-                  ((News)obj).nachricht_de = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).nachricht_de = value.string();
                }
             // nachricht_it
             if ((value = structure.property("nachricht_it")) != null)
                if (value.isNull())
-                  ((News)obj).nachricht_it = null;
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).nachricht_it = null;
                else
                {
-                  ((News)obj).nachricht_it = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).nachricht_it = value.string();
                }
             // titel_de
             if ((value = structure.property("titel_de")) != null)
                if (value.isNull())
-                  ((News)obj).titel_de = null;
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).titel_de = null;
                else
                {
-                  ((News)obj).titel_de = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).titel_de = value.string();
                }
             // titel_it
             if ((value = structure.property("titel_it")) != null)
                if (value.isNull())
-                  ((News)obj).titel_it = null;
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).titel_it = null;
                else
                {
-                  ((News)obj).titel_it = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.News)obj).titel_it = value.string();
                }
             structure.close();
          }
@@ -479,22 +479,22 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // area
             if ((value = structure.property("area")) != null)
                if (value.isNull())
-                  ((BusLine)obj).area = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusLine)obj).area = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((BusLine)obj).area = (it.bz.tis.sasabus.backend.shared.Area)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.BusLine)obj).area = (it.bz.tis.sasabus.backend.shared.Area)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Area"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((BusLine)obj).area = (it.bz.tis.sasabus.backend.shared.Area)o;
+                     ((it.bz.tis.sasabus.backend.shared.BusLine)obj).area = (it.bz.tis.sasabus.backend.shared.Area)o;
                   }
                }
             // busStops
             if ((value = structure.property("busStops")) != null)
                if (value.isNull())
-                  ((BusLine)obj).busStops = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusLine)obj).busStops = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -518,7 +518,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((BusLine)obj).busStops = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.BusLine)obj).busStops = arrayList;
                }
             // id
             if ((value = structure.property("id")) != null)
@@ -526,15 +526,15 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusLine)obj).id = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusLine)obj).id = (int)value.integer();
                }
             // number
             if ((value = structure.property("number")) != null)
                if (value.isNull())
-                  ((BusLine)obj).number = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusLine)obj).number = null;
                else
                {
-                  ((BusLine)obj).number = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.BusLine)obj).number = value.string();
                }
             structure.close();
          }
@@ -576,7 +576,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // bounds
             if ((value = structure.property("bounds")) != null)
                if (value.isNull())
-                  ((Area)obj).bounds = null;
+                  ((it.bz.tis.sasabus.backend.shared.Area)obj).bounds = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -600,12 +600,12 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((Area)obj).bounds = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.Area)obj).bounds = arrayList;
                }
             // busLines
             if ((value = structure.property("busLines")) != null)
                if (value.isNull())
-                  ((Area)obj).busLines = null;
+                  ((it.bz.tis.sasabus.backend.shared.Area)obj).busLines = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -629,7 +629,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((Area)obj).busLines = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.Area)obj).busLines = arrayList;
                }
             // id
             if ((value = structure.property("id")) != null)
@@ -637,23 +637,23 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((Area)obj).id = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.Area)obj).id = (int)value.integer();
                }
             // name_de
             if ((value = structure.property("name_de")) != null)
                if (value.isNull())
-                  ((Area)obj).name_de = null;
+                  ((it.bz.tis.sasabus.backend.shared.Area)obj).name_de = null;
                else
                {
-                  ((Area)obj).name_de = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.Area)obj).name_de = value.string();
                }
             // name_it
             if ((value = structure.property("name_it")) != null)
                if (value.isNull())
-                  ((Area)obj).name_it = null;
+                  ((it.bz.tis.sasabus.backend.shared.Area)obj).name_it = null;
                else
                {
-                  ((Area)obj).name_it = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.Area)obj).name_it = value.string();
                }
             structure.close();
          }
@@ -686,16 +686,16 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // busTrip
             if ((value = structure.property("busTrip")) != null)
                if (value.isNull())
-                  ((BusTripStopReference)obj).busTrip = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusTripStopReference)obj).busTrip = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((BusTripStopReference)obj).busTrip = (it.bz.tis.sasabus.backend.shared.BusTrip)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.BusTripStopReference)obj).busTrip = (it.bz.tis.sasabus.backend.shared.BusTrip)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("BusTrip"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((BusTripStopReference)obj).busTrip = (it.bz.tis.sasabus.backend.shared.BusTrip)o;
+                     ((it.bz.tis.sasabus.backend.shared.BusTripStopReference)obj).busTrip = (it.bz.tis.sasabus.backend.shared.BusTrip)o;
                   }
                }
             // index
@@ -704,7 +704,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusTripStopReference)obj).index = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusTripStopReference)obj).index = (int)value.integer();
                }
             structure.close();
          }
@@ -743,16 +743,16 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // busStation
             if ((value = structure.property("busStation")) != null)
                if (value.isNull())
-                  ((BusStop)obj).busStation = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusStop)obj).busStation = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((BusStop)obj).busStation = (it.bz.tis.sasabus.backend.shared.BusStation)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.BusStop)obj).busStation = (it.bz.tis.sasabus.backend.shared.BusStation)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("BusStation"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((BusStop)obj).busStation = (it.bz.tis.sasabus.backend.shared.BusStation)o;
+                     ((it.bz.tis.sasabus.backend.shared.BusStop)obj).busStation = (it.bz.tis.sasabus.backend.shared.BusStation)o;
                   }
                }
             // id
@@ -761,7 +761,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusStop)obj).id = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusStop)obj).id = (int)value.integer();
                }
             // lat
             if ((value = structure.property("lat")) != null)
@@ -769,7 +769,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusStop)obj).lat = value.decimal();
+                  ((it.bz.tis.sasabus.backend.shared.BusStop)obj).lat = value.decimal();
                }
             // lon
             if ((value = structure.property("lon")) != null)
@@ -777,7 +777,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusStop)obj).lon = value.decimal();
+                  ((it.bz.tis.sasabus.backend.shared.BusStop)obj).lon = value.decimal();
                }
             structure.close();
          }
@@ -813,7 +813,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((LatLng)obj).lat = value.decimal();
+                  ((it.bz.tis.sasabus.backend.shared.LatLng)obj).lat = value.decimal();
                }
             // lon
             if ((value = structure.property("lon")) != null)
@@ -821,7 +821,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((LatLng)obj).lon = value.decimal();
+                  ((it.bz.tis.sasabus.backend.shared.LatLng)obj).lon = value.decimal();
                }
             structure.close();
          }
@@ -866,12 +866,12 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusTrip)obj).busLineId = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).busLineId = (int)value.integer();
                }
             // busTripStop
             if ((value = structure.property("busTripStop")) != null)
                if (value.isNull())
-                  ((BusTrip)obj).busTripStop = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).busTripStop = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -895,7 +895,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((BusTrip)obj).busTripStop = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).busTripStop = arrayList;
                }
             // endHHMMSS
             if ((value = structure.property("endHHMMSS")) != null)
@@ -903,7 +903,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusTrip)obj).endHHMMSS = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).endHHMMSS = (int)value.integer();
                }
             // id
             if ((value = structure.property("id")) != null)
@@ -911,7 +911,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusTrip)obj).id = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).id = (int)value.integer();
                }
             // startHHMMSS
             if ((value = structure.property("startHHMMSS")) != null)
@@ -919,7 +919,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusTrip)obj).startHHMMSS = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusTrip)obj).startHHMMSS = (int)value.integer();
                }
             structure.close();
          }
@@ -961,7 +961,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
             // busLines
             if ((value = structure.property("busLines")) != null)
                if (value.isNull())
-                  ((BusStation)obj).busLines = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).busLines = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -985,12 +985,12 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((BusStation)obj).busLines = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).busLines = arrayList;
                }
             // busStops
             if ((value = structure.property("busStops")) != null)
                if (value.isNull())
-                  ((BusStation)obj).busStops = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).busStops = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -1014,31 +1014,31 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((BusStation)obj).busStops = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).busStops = arrayList;
                }
             // id
             if ((value = structure.property("id")) != null)
                if (value.isNull())
-                  ((BusStation)obj).id = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).id = null;
                else
                {
-                  ((BusStation)obj).id = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).id = value.string();
                }
             // name_de
             if ((value = structure.property("name_de")) != null)
                if (value.isNull())
-                  ((BusStation)obj).name_de = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).name_de = null;
                else
                {
-                  ((BusStation)obj).name_de = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).name_de = value.string();
                }
             // name_it
             if ((value = structure.property("name_it")) != null)
                if (value.isNull())
-                  ((BusStation)obj).name_it = null;
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).name_it = null;
                else
                {
-                  ((BusStation)obj).name_it = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.BusStation)obj).name_it = value.string();
                }
             structure.close();
          }
@@ -1077,7 +1077,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusTripStop)obj).busStopId = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusTripStop)obj).busStopId = (int)value.integer();
                }
             // id
             if ((value = structure.property("id")) != null)
@@ -1085,7 +1085,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusTripStop)obj).id = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusTripStop)obj).id = (int)value.integer();
                }
             // timeHHMMSS
             if ((value = structure.property("timeHHMMSS")) != null)
@@ -1093,7 +1093,7 @@ public class SASAbusBackendUnmarshaller_Helper extends bz.davide.dmxmljson.unmar
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((BusTripStop)obj).timeHHMMSS = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.BusTripStop)obj).timeHHMMSS = (int)value.integer();
                }
             structure.close();
          }

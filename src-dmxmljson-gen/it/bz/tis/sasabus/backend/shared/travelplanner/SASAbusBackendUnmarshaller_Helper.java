@@ -60,7 +60,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // ConReq
             if ((value = structure.property("ConReq")) != null)
                if (value.isNull())
-                  ((ReqC)obj).ConReq = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).ConReq = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -84,12 +84,12 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ReqC)obj).ConReq = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).ConReq = arrayList;
                }
             // ConScrReq
             if ((value = structure.property("ConScrReq")) != null)
                if (value.isNull())
-                  ((ReqC)obj).ConScrReq = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).ConScrReq = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -113,12 +113,12 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ReqC)obj).ConScrReq = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).ConScrReq = arrayList;
                }
             // LocValReq
             if ((value = structure.property("LocValReq")) != null)
                if (value.isNull())
-                  ((ReqC)obj).LocValReq = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).LocValReq = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -142,55 +142,55 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ReqC)obj).LocValReq = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).LocValReq = arrayList;
                }
             // accessId
             if ((value = structure.property("accessId")) != null)
                if (value.isNull())
-                  ((ReqC)obj).accessId = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).accessId = null;
                else
                {
-                  ((ReqC)obj).accessId = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).accessId = value.string();
                }
             // lang
             if ((value = structure.property("lang")) != null)
                if (value.isNull())
-                  ((ReqC)obj).lang = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).lang = null;
                else
                {
-                  ((ReqC)obj).lang = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).lang = value.string();
                }
             // prod
             if ((value = structure.property("prod")) != null)
                if (value.isNull())
-                  ((ReqC)obj).prod = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).prod = null;
                else
                {
-                  ((ReqC)obj).prod = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).prod = value.string();
                }
             // ver
             if ((value = structure.property("ver")) != null)
                if (value.isNull())
-                  ((ReqC)obj).ver = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).ver = null;
                else
                {
-                  ((ReqC)obj).ver = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).ver = value.string();
                }
             // xmlns__xsi
             if ((value = structure.property("xmlns__xsi")) != null)
                if (value.isNull())
-                  ((ReqC)obj).xmlns__xsi = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).xmlns__xsi = null;
                else
                {
-                  ((ReqC)obj).xmlns__xsi = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).xmlns__xsi = value.string();
                }
             // xsi__noNamespaceSchemaLocation
             if ((value = structure.property("xsi__noNamespaceSchemaLocation")) != null)
                if (value.isNull())
-                  ((ReqC)obj).xsi__noNamespaceSchemaLocation = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).xsi__noNamespaceSchemaLocation = null;
                else
                {
-                  ((ReqC)obj).xsi__noNamespaceSchemaLocation = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqC)obj).xsi__noNamespaceSchemaLocation = value.string();
                }
             structure.close();
          }
@@ -223,7 +223,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // ConRes
             if ((value = structure.property("ConRes")) != null)
                if (value.isNull())
-                  ((ResC)obj).ConRes = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ResC)obj).ConRes = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -247,12 +247,12 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ResC)obj).ConRes = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ResC)obj).ConRes = arrayList;
                }
             // LocValRes
             if ((value = structure.property("LocValRes")) != null)
                if (value.isNull())
-                  ((ResC)obj).LocValRes = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ResC)obj).LocValRes = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -276,7 +276,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ResC)obj).LocValRes = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ResC)obj).LocValRes = arrayList;
                }
             structure.close();
          }
@@ -315,61 +315,61 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Dest
             if ((value = structure.property("Dest")) != null)
                if (value.isNull())
-                  ((ConReq)obj).Dest = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).Dest = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((ConReq)obj).Dest = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).Dest = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("ConReqStartDest"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((ConReq)obj).Dest = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).Dest = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)o;
                   }
                }
             // RFlags
             if ((value = structure.property("RFlags")) != null)
                if (value.isNull())
-                  ((ConReq)obj).RFlags = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).RFlags = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((ConReq)obj).RFlags = (it.bz.tis.sasabus.backend.shared.travelplanner.RFlags)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).RFlags = (it.bz.tis.sasabus.backend.shared.travelplanner.RFlags)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("RFlags"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((ConReq)obj).RFlags = (it.bz.tis.sasabus.backend.shared.travelplanner.RFlags)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).RFlags = (it.bz.tis.sasabus.backend.shared.travelplanner.RFlags)o;
                   }
                }
             // ReqT
             if ((value = structure.property("ReqT")) != null)
                if (value.isNull())
-                  ((ConReq)obj).ReqT = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).ReqT = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((ConReq)obj).ReqT = (it.bz.tis.sasabus.backend.shared.travelplanner.ReqT)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).ReqT = (it.bz.tis.sasabus.backend.shared.travelplanner.ReqT)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("ReqT"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((ConReq)obj).ReqT = (it.bz.tis.sasabus.backend.shared.travelplanner.ReqT)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).ReqT = (it.bz.tis.sasabus.backend.shared.travelplanner.ReqT)o;
                   }
                }
             // Start
             if ((value = structure.property("Start")) != null)
                if (value.isNull())
-                  ((ConReq)obj).Start = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).Start = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((ConReq)obj).Start = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).Start = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("ConReqStartDest"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((ConReq)obj).Start = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReq)obj).Start = (it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)o;
                   }
                }
             structure.close();
@@ -406,7 +406,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // ConResCtxt
             if ((value = structure.property("ConResCtxt")) != null)
                if (value.isNull())
-                  ((ConScrReq)obj).ConResCtxt = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq)obj).ConResCtxt = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -420,7 +420,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                         arrayList[i] = (value.string());
                   }                                                                   
                   arr.close();        
-                  ((ConScrReq)obj).ConResCtxt = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq)obj).ConResCtxt = arrayList;
                }
             // nrCons
             if ((value = structure.property("nrCons")) != null)
@@ -428,15 +428,15 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((ConScrReq)obj).nrCons = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq)obj).nrCons = (int)value.integer();
                }
             // srcDir
             if ((value = structure.property("srcDir")) != null)
                if (value.isNull())
-                  ((ConScrReq)obj).srcDir = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq)obj).srcDir = null;
                else
                {
-                  ((ConScrReq)obj).srcDir = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConScrReq)obj).srcDir = value.string();
                }
             structure.close();
          }
@@ -469,25 +469,25 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // ReqLoc
             if ((value = structure.property("ReqLoc")) != null)
                if (value.isNull())
-                  ((LocValReq)obj).ReqLoc = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq)obj).ReqLoc = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((LocValReq)obj).ReqLoc = (it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq)obj).ReqLoc = (it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("ReqLoc"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((LocValReq)obj).ReqLoc = (it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq)obj).ReqLoc = (it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc)o;
                   }
                }
             // id
             if ((value = structure.property("id")) != null)
                if (value.isNull())
-                  ((LocValReq)obj).id = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq)obj).id = null;
                else
                {
-                  ((LocValReq)obj).id = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.LocValReq)obj).id = value.string();
                }
             structure.close();
          }
@@ -523,7 +523,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // ConResCtxt
             if ((value = structure.property("ConResCtxt")) != null)
                if (value.isNull())
-                  ((ConRes)obj).ConResCtxt = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConRes)obj).ConResCtxt = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -537,30 +537,30 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                         arrayList[i] = (value.string());
                   }                                                                   
                   arr.close();        
-                  ((ConRes)obj).ConResCtxt = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConRes)obj).ConResCtxt = arrayList;
                }
             // ConnectionList
             if ((value = structure.property("ConnectionList")) != null)
                if (value.isNull())
-                  ((ConRes)obj).ConnectionList = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConRes)obj).ConnectionList = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((ConRes)obj).ConnectionList = (it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConRes)obj).ConnectionList = (it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("ConnectionList"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((ConRes)obj).ConnectionList = (it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConRes)obj).ConnectionList = (it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList)o;
                   }
                }
             // dir
             if ((value = structure.property("dir")) != null)
                if (value.isNull())
-                  ((ConRes)obj).dir = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConRes)obj).dir = null;
                else
                {
-                  ((ConRes)obj).dir = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConRes)obj).dir = value.string();
                }
             structure.close();
          }
@@ -593,7 +593,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Station
             if ((value = structure.property("Station")) != null)
                if (value.isNull())
-                  ((LocValRes)obj).Station = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes)obj).Station = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -617,15 +617,15 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((LocValRes)obj).Station = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes)obj).Station = arrayList;
                }
             // id
             if ((value = structure.property("id")) != null)
                if (value.isNull())
-                  ((LocValRes)obj).id = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes)obj).id = null;
                else
                {
-                  ((LocValRes)obj).id = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.LocValRes)obj).id = value.string();
                }
             structure.close();
          }
@@ -658,7 +658,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Prod
             if ((value = structure.property("Prod")) != null)
                if (value.isNull())
-                  ((ConReqStartDest)obj).Prod = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)obj).Prod = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -682,21 +682,21 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ConReqStartDest)obj).Prod = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)obj).Prod = arrayList;
                }
             // Station
             if ((value = structure.property("Station")) != null)
                if (value.isNull())
-                  ((ConReqStartDest)obj).Station = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)obj).Station = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((ConReqStartDest)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Station"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((ConReqStartDest)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.ConReqStartDest)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)o;
                   }
                }
             structure.close();
@@ -739,7 +739,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((RFlags)obj).b = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.RFlags)obj).b = (int)value.integer();
                }
             // chExtension
             if ((value = structure.property("chExtension")) != null)
@@ -747,7 +747,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((RFlags)obj).chExtension = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.RFlags)obj).chExtension = (int)value.integer();
                }
             // f
             if ((value = structure.property("f")) != null)
@@ -755,15 +755,15 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((RFlags)obj).f = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.RFlags)obj).f = (int)value.integer();
                }
             // sMode
             if ((value = structure.property("sMode")) != null)
                if (value.isNull())
-                  ((RFlags)obj).sMode = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.RFlags)obj).sMode = null;
                else
                {
-                  ((RFlags)obj).sMode = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.RFlags)obj).sMode = value.string();
                }
             structure.close();
          }
@@ -802,23 +802,23 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((ReqT)obj).a = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqT)obj).a = (int)value.integer();
                }
             // date
             if ((value = structure.property("date")) != null)
                if (value.isNull())
-                  ((ReqT)obj).date = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqT)obj).date = null;
                else
                {
-                  ((ReqT)obj).date = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqT)obj).date = value.string();
                }
             // time
             if ((value = structure.property("time")) != null)
                if (value.isNull())
-                  ((ReqT)obj).time = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqT)obj).time = null;
                else
                {
-                  ((ReqT)obj).time = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqT)obj).time = value.string();
                }
             structure.close();
          }
@@ -851,18 +851,18 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // match
             if ((value = structure.property("match")) != null)
                if (value.isNull())
-                  ((ReqLoc)obj).match = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc)obj).match = null;
                else
                {
-                  ((ReqLoc)obj).match = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc)obj).match = value.string();
                }
             // type
             if ((value = structure.property("type")) != null)
                if (value.isNull())
-                  ((ReqLoc)obj).type = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc)obj).type = null;
                else
                {
-                  ((ReqLoc)obj).type = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ReqLoc)obj).type = value.string();
                }
             structure.close();
          }
@@ -892,7 +892,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Connection
             if ((value = structure.property("Connection")) != null)
                if (value.isNull())
-                  ((ConnectionList)obj).Connection = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList)obj).Connection = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -916,7 +916,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ConnectionList)obj).Connection = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConnectionList)obj).Connection = arrayList;
                }
             structure.close();
          }
@@ -961,50 +961,50 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // externalId
             if ((value = structure.property("externalId")) != null)
                if (value.isNull())
-                  ((Station)obj).externalId = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).externalId = null;
                else
                {
-                  ((Station)obj).externalId = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).externalId = value.string();
                }
             // externalStationNr
             if ((value = structure.property("externalStationNr")) != null)
                if (value.isNull())
-                  ((Station)obj).externalStationNr = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).externalStationNr = null;
                else
                {
-                  ((Station)obj).externalStationNr = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).externalStationNr = value.string();
                }
             // name
             if ((value = structure.property("name")) != null)
                if (value.isNull())
-                  ((Station)obj).name = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).name = null;
                else
                {
-                  ((Station)obj).name = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).name = value.string();
                }
             // type
             if ((value = structure.property("type")) != null)
                if (value.isNull())
-                  ((Station)obj).type = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).type = null;
                else
                {
-                  ((Station)obj).type = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).type = value.string();
                }
             // x
             if ((value = structure.property("x")) != null)
                if (value.isNull())
-                  ((Station)obj).x = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).x = null;
                else
                {
-                  ((Station)obj).x = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).x = value.string();
                }
             // y
             if ((value = structure.property("y")) != null)
                if (value.isNull())
-                  ((Station)obj).y = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).y = null;
                else
                {
-                  ((Station)obj).y = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Station)obj).y = value.string();
                }
             structure.close();
          }
@@ -1046,7 +1046,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((Prod)obj).bike = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Prod)obj).bike = (int)value.integer();
                }
             // couchette
             if ((value = structure.property("couchette")) != null)
@@ -1054,7 +1054,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((Prod)obj).couchette = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Prod)obj).couchette = (int)value.integer();
                }
             // direct
             if ((value = structure.property("direct")) != null)
@@ -1062,7 +1062,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((Prod)obj).direct = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Prod)obj).direct = (int)value.integer();
                }
             // sleeper
             if ((value = structure.property("sleeper")) != null)
@@ -1070,7 +1070,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((Prod)obj).sleeper = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Prod)obj).sleeper = (int)value.integer();
                }
             structure.close();
          }
@@ -1103,31 +1103,31 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // ConSectionList
             if ((value = structure.property("ConSectionList")) != null)
                if (value.isNull())
-                  ((Connection)obj).ConSectionList = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Connection)obj).ConSectionList = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Connection)obj).ConSectionList = (it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Connection)obj).ConSectionList = (it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("ConSectionList"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Connection)obj).ConSectionList = (it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Connection)obj).ConSectionList = (it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList)o;
                   }
                }
             // Overview
             if ((value = structure.property("Overview")) != null)
                if (value.isNull())
-                  ((Connection)obj).Overview = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Connection)obj).Overview = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Connection)obj).Overview = (it.bz.tis.sasabus.backend.shared.travelplanner.Overview)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Connection)obj).Overview = (it.bz.tis.sasabus.backend.shared.travelplanner.Overview)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Overview"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Connection)obj).Overview = (it.bz.tis.sasabus.backend.shared.travelplanner.Overview)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Connection)obj).Overview = (it.bz.tis.sasabus.backend.shared.travelplanner.Overview)o;
                   }
                }
             structure.close();
@@ -1158,7 +1158,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // ConSection
             if ((value = structure.property("ConSection")) != null)
                if (value.isNull())
-                  ((ConSectionList)obj).ConSection = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList)obj).ConSection = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -1182,7 +1182,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ConSectionList)obj).ConSection = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList)obj).ConSection = arrayList;
                }
             structure.close();
          }
@@ -1221,46 +1221,46 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Arrival
             if ((value = structure.property("Arrival")) != null)
                if (value.isNull())
-                  ((Overview)obj).Arrival = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Arrival = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Overview)obj).Arrival = (it.bz.tis.sasabus.backend.shared.travelplanner.Arrival)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Arrival = (it.bz.tis.sasabus.backend.shared.travelplanner.Arrival)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Arrival"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Overview)obj).Arrival = (it.bz.tis.sasabus.backend.shared.travelplanner.Arrival)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Arrival = (it.bz.tis.sasabus.backend.shared.travelplanner.Arrival)o;
                   }
                }
             // Departure
             if ((value = structure.property("Departure")) != null)
                if (value.isNull())
-                  ((Overview)obj).Departure = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Departure = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Overview)obj).Departure = (it.bz.tis.sasabus.backend.shared.travelplanner.Departure)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Departure = (it.bz.tis.sasabus.backend.shared.travelplanner.Departure)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Departure"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Overview)obj).Departure = (it.bz.tis.sasabus.backend.shared.travelplanner.Departure)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Departure = (it.bz.tis.sasabus.backend.shared.travelplanner.Departure)o;
                   }
                }
             // Duration
             if ((value = structure.property("Duration")) != null)
                if (value.isNull())
-                  ((Overview)obj).Duration = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Duration = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Overview)obj).Duration = (it.bz.tis.sasabus.backend.shared.travelplanner.Duration)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Duration = (it.bz.tis.sasabus.backend.shared.travelplanner.Duration)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Duration"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Overview)obj).Duration = (it.bz.tis.sasabus.backend.shared.travelplanner.Duration)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Duration = (it.bz.tis.sasabus.backend.shared.travelplanner.Duration)o;
                   }
                }
             // Transfers
@@ -1269,7 +1269,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((Overview)obj).Transfers = (int)value.integer();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Overview)obj).Transfers = (int)value.integer();
                }
             structure.close();
          }
@@ -1302,7 +1302,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Journey
             if ((value = structure.property("Journey")) != null)
                if (value.isNull())
-                  ((ConSection)obj).Journey = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConSection)obj).Journey = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -1326,12 +1326,12 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ConSection)obj).Journey = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConSection)obj).Journey = arrayList;
                }
             // Walk
             if ((value = structure.property("Walk")) != null)
                if (value.isNull())
-                  ((ConSection)obj).Walk = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConSection)obj).Walk = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -1355,7 +1355,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((ConSection)obj).Walk = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.ConSection)obj).Walk = arrayList;
                }
             structure.close();
          }
@@ -1385,16 +1385,16 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // BasicStop
             if ((value = structure.property("BasicStop")) != null)
                if (value.isNull())
-                  ((Arrival)obj).BasicStop = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Arrival)obj).BasicStop = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Arrival)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Arrival)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("BasicStop"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Arrival)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Arrival)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)o;
                   }
                }
             structure.close();
@@ -1425,16 +1425,16 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // BasicStop
             if ((value = structure.property("BasicStop")) != null)
                if (value.isNull())
-                  ((Departure)obj).BasicStop = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Departure)obj).BasicStop = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Departure)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Departure)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("BasicStop"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Departure)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Departure)obj).BasicStop = (it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)o;
                   }
                }
             structure.close();
@@ -1465,10 +1465,10 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Time
             if ((value = structure.property("Time")) != null)
                if (value.isNull())
-                  ((Duration)obj).Time = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Duration)obj).Time = null;
                else
                {
-                  ((Duration)obj).Time = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Duration)obj).Time = value.string();
                }
             structure.close();
          }
@@ -1501,31 +1501,31 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // JourneyAttributeList
             if ((value = structure.property("JourneyAttributeList")) != null)
                if (value.isNull())
-                  ((Journey)obj).JourneyAttributeList = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Journey)obj).JourneyAttributeList = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Journey)obj).JourneyAttributeList = (it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Journey)obj).JourneyAttributeList = (it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("JourneyAttributeList"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Journey)obj).JourneyAttributeList = (it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Journey)obj).JourneyAttributeList = (it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList)o;
                   }
                }
             // PassList
             if ((value = structure.property("PassList")) != null)
                if (value.isNull())
-                  ((Journey)obj).PassList = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Journey)obj).PassList = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Journey)obj).PassList = (it.bz.tis.sasabus.backend.shared.travelplanner.PassList)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Journey)obj).PassList = (it.bz.tis.sasabus.backend.shared.travelplanner.PassList)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("PassList"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Journey)obj).PassList = (it.bz.tis.sasabus.backend.shared.travelplanner.PassList)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Journey)obj).PassList = (it.bz.tis.sasabus.backend.shared.travelplanner.PassList)o;
                   }
                }
             structure.close();
@@ -1556,16 +1556,16 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Duration
             if ((value = structure.property("Duration")) != null)
                if (value.isNull())
-                  ((Walk)obj).Duration = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Walk)obj).Duration = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Walk)obj).Duration = (it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Walk)obj).Duration = (it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("WalkDuration"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Walk)obj).Duration = (it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.Walk)obj).Duration = (it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration)o;
                   }
                }
             structure.close();
@@ -1602,46 +1602,46 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Arr
             if ((value = structure.property("Arr")) != null)
                if (value.isNull())
-                  ((BasicStop)obj).Arr = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)obj).Arr = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((BasicStop)obj).Arr = (it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)obj).Arr = (it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DepArr"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((BasicStop)obj).Arr = (it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)obj).Arr = (it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)o;
                   }
                }
             // Dep
             if ((value = structure.property("Dep")) != null)
                if (value.isNull())
-                  ((BasicStop)obj).Dep = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)obj).Dep = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((BasicStop)obj).Dep = (it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)obj).Dep = (it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DepArr"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((BasicStop)obj).Dep = (it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)obj).Dep = (it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)o;
                   }
                }
             // Station
             if ((value = structure.property("Station")) != null)
                if (value.isNull())
-                  ((BasicStop)obj).Station = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)obj).Station = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((BasicStop)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Station"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((BasicStop)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop)obj).Station = (it.bz.tis.sasabus.backend.shared.travelplanner.Station)o;
                   }
                }
             structure.close();
@@ -1672,7 +1672,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // JourneyAttribute
             if ((value = structure.property("JourneyAttribute")) != null)
                if (value.isNull())
-                  ((JourneyAttributeList)obj).JourneyAttribute = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList)obj).JourneyAttribute = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -1696,7 +1696,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((JourneyAttributeList)obj).JourneyAttribute = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttributeList)obj).JourneyAttribute = arrayList;
                }
             structure.close();
          }
@@ -1726,7 +1726,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // BasicStop
             if ((value = structure.property("BasicStop")) != null)
                if (value.isNull())
-                  ((PassList)obj).BasicStop = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.PassList)obj).BasicStop = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -1750,7 +1750,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((PassList)obj).BasicStop = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.PassList)obj).BasicStop = arrayList;
                }
             structure.close();
          }
@@ -1780,10 +1780,10 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Time
             if ((value = structure.property("Time")) != null)
                if (value.isNull())
-                  ((WalkDuration)obj).Time = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration)obj).Time = null;
                else
                {
-                  ((WalkDuration)obj).Time = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.WalkDuration)obj).Time = value.string();
                }
             structure.close();
          }
@@ -1813,10 +1813,10 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Time
             if ((value = structure.property("Time")) != null)
                if (value.isNull())
-                  ((DepArr)obj).Time = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)obj).Time = null;
                else
                {
-                  ((DepArr)obj).Time = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.DepArr)obj).Time = value.string();
                }
             structure.close();
          }
@@ -1846,16 +1846,16 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Attribute
             if ((value = structure.property("Attribute")) != null)
                if (value.isNull())
-                  ((JourneyAttribute)obj).Attribute = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute)obj).Attribute = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((JourneyAttribute)obj).Attribute = (it.bz.tis.sasabus.backend.shared.travelplanner.Attribute)identities.get(refid);
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute)obj).Attribute = (it.bz.tis.sasabus.backend.shared.travelplanner.Attribute)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Attribute"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((JourneyAttribute)obj).Attribute = (it.bz.tis.sasabus.backend.shared.travelplanner.Attribute)o;
+                     ((it.bz.tis.sasabus.backend.shared.travelplanner.JourneyAttribute)obj).Attribute = (it.bz.tis.sasabus.backend.shared.travelplanner.Attribute)o;
                   }
                }
             structure.close();
@@ -1889,7 +1889,7 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // AttributeVariant
             if ((value = structure.property("AttributeVariant")) != null)
                if (value.isNull())
-                  ((Attribute)obj).AttributeVariant = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Attribute)obj).AttributeVariant = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -1913,15 +1913,15 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((Attribute)obj).AttributeVariant = arrayList;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Attribute)obj).AttributeVariant = arrayList;
                }
             // type
             if ((value = structure.property("type")) != null)
                if (value.isNull())
-                  ((Attribute)obj).type = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Attribute)obj).type = null;
                else
                {
-                  ((Attribute)obj).type = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.Attribute)obj).type = value.string();
                }
             structure.close();
          }
@@ -1954,18 +1954,18 @@ public class SASAbusBackendUnmarshaller_Helper extends it.bz.tis.sasabus.backend
             // Text
             if ((value = structure.property("Text")) != null)
                if (value.isNull())
-                  ((AttributeVariant)obj).Text = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant)obj).Text = null;
                else
                {
-                  ((AttributeVariant)obj).Text = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant)obj).Text = value.string();
                }
             // type
             if ((value = structure.property("type")) != null)
                if (value.isNull())
-                  ((AttributeVariant)obj).type = null;
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant)obj).type = null;
                else
                {
-                  ((AttributeVariant)obj).type = value.string();
+                  ((it.bz.tis.sasabus.backend.shared.travelplanner.AttributeVariant)obj).type = value.string();
                }
             structure.close();
          }

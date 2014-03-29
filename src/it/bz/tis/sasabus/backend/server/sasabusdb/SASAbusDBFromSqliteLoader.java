@@ -139,7 +139,33 @@ public class SASAbusDBFromSqliteLoader
          String nome_it = rs.getString("nome_it");
          String nome_de = rs.getString("nome_de");
          String prefixTable = rs.getString("nome_table");
-         LatLng[] bounds = new LatLng[0];
+         LatLng[] bounds = null;
+
+         switch (bacino_id)
+         {
+            case 1:
+               bounds = new LatLng[Area.boundLats_bz.length];
+               for (int i = 0; i < bounds.length; i++)
+               {
+                  bounds[i] = new LatLng(Area.boundLats_bz[i], Area.boundLons_bz[i]);
+               }
+            break;
+            case 2:
+               bounds = new LatLng[Area.boundLats_me.length];
+               for (int i = 0; i < bounds.length; i++)
+               {
+                  bounds[i] = new LatLng(Area.boundLats_me[i], Area.boundLons_me[i]);
+               }
+            break;
+            case 3:
+               bounds = new LatLng[Area.boundLats_su.length];
+               for (int i = 0; i < bounds.length; i++)
+               {
+                  bounds[i] = new LatLng(Area.boundLats_su[i], Area.boundLons_su[i]);
+               }
+            break;
+         }
+
          Area area = new Area(bacino_id, nome_it, nome_de, bounds);
 
          areaList.add(area);
@@ -164,12 +190,14 @@ public class SASAbusDBFromSqliteLoader
       ResultSet rs = conn.createStatement().executeQuery(query);
       while (rs.next())
       {
-         int line_id = rs.getInt("id") * 100 + area.getId(); // make id unique for all areas
+         int db_line_id = rs.getInt("id");
+         int line_id = db_line_id * 100 + area.getId(); // make id unique for all areas
          String num = rs.getString("num_lin");
          BusLine busLine = new BusLine(line_id, num, area);
          IdentityHashMap<BusStop, Void> busLineUniqueBusStops = new IdentityHashMap<BusStop, Void>();
          loadBusTrips(conn,
                       busLine,
+                      db_line_id,
                       prefixTable,
                       busStopsById,
                       sasabusdb,
@@ -186,6 +214,7 @@ public class SASAbusDBFromSqliteLoader
 
    private static void loadBusTrips(Connection conn,
                                     BusLine busLine,
+                                    int db_line_id,
                                     String prefixTable,
                                     HashMap<Integer, BusStop> busStopsById,
                                     SASAbusDBServerImpl sasabusdb,
@@ -197,7 +226,7 @@ public class SASAbusDBFromSqliteLoader
       String query = "select id, effettuazione from "
                      + prefixTable
                      + "corse  where lineaId = "
-                     + busLine.getId()
+                     + db_line_id
                      + " order by orario_partenza";
 
       ResultSet rs = conn.createStatement().executeQuery(query);
