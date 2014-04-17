@@ -52,8 +52,8 @@ public class ReqC
       this.ConReq[0].Start.Prod = new Prod[] { new Prod() };
       this.ConReq[0].Dest.Station = dest;
       this.ConReq[0].ReqT.date = String.valueOf(yyyymmddhhmm / 10000l);
-      String hh = String.valueOf(yyyymmddhhmm % 10000l / 100l);
-      String mm = String.valueOf(yyyymmddhhmm % 100l);
+      String hh = String.format("%02d", yyyymmddhhmm % 10000l / 100l);
+      String mm = String.format("%02d", yyyymmddhhmm % 100l);
       this.ConReq[0].ReqT.time = hh + ":" + mm;
    }
 

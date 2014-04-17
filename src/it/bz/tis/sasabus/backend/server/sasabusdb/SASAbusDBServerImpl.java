@@ -138,25 +138,6 @@ public class SASAbusDBServerImpl implements SASAbusDB
                   endBusStation.getName_it() + " - " + endBusStation.getName_de(),
                   yyyymmddhhmm,
                   response);
-      /*
-      ReqC startBusStationRequest = new ReqC(startBusStation.getName_it() +
-                                             " - " +
-                                             startBusStation.getName_de());
-      ResC startBusStationResponse = new ResC();
-      queryTravelPlanner(startBusStationRequest, "ReqC", startBusStationResponse);
-
-      ReqC endBusStationRequest = new ReqC(endBusStation.getName_it() + " - " + endBusStation.getName_de());
-      ResC endBusStationResponse = new ResC();
-      queryTravelPlanner(endBusStationRequest, "ReqC", endBusStationResponse);
-
-      ReqC routeRequest = new ReqC(startBusStationResponse.getLocValRes().getStations()[0],
-                                   endBusStationResponse.getLocValRes().getStations()[0],
-                                   yyyymmddhhmm);
-      ResC routeResponse = new ResC();
-      queryTravelPlanner(routeRequest, "ReqC", routeResponse);
-
-      response.ready(routeResponse.getConRes()[0]);
-      */
    }
 
    public static void calcRouting(String startBusStationNameItDe,
