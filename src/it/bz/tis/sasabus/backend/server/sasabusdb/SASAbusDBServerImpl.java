@@ -23,6 +23,7 @@ package it.bz.tis.sasabus.backend.server.sasabusdb;
 import it.bz.tis.sasabus.backend.shared.Area;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
 import it.bz.tis.sasabus.backend.shared.BusTripStopList;
 import it.bz.tis.sasabus.backend.shared.BusTripStopReference;
@@ -66,6 +67,23 @@ public class SASAbusDBServerImpl implements SASAbusDB
    protected HashMap<String, BusStation>                      busStationsById           = new HashMap<String, BusStation>();
 
    protected HashMap<String, ArrayList<BusTripStopReference>> busTripStopByBusStationId = new HashMap<String, ArrayList<BusTripStopReference>>();
+
+   protected ArrayList<BusTrip>                               trips                     = new ArrayList<BusTrip>();
+
+   public Area[] getAreas()
+   {
+      return this.areas;
+   }
+
+   public ArrayList<BusTrip> getTrips()
+   {
+      return this.trips;
+   }
+
+   public BusStation[] getBusStations()
+   {
+      return this.busStationsById.values().toArray(new BusStation[0]);
+   }
 
    @Override
    public void lastModified(SASAbusDBDataReady<SASAbusDBLastModified> response)

@@ -247,6 +247,8 @@ public class SASAbusDBFromSqliteLoader
                           busLineUniqueBusStops,
                           busLinesByBusStation);
 
+         sasabusdb.trips.add(busTrip);
+
       }
 
       rs.close();
