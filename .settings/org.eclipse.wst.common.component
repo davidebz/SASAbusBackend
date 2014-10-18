@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="SASAbusBackend">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src-dmxmljson-gen"/>
         <property name="java-output-path" value="/SASAbusBackend/build/classes"/>
-        <property name="context-root" value="backend"/>
+        <property name="context-root" value="backend2"/>
     </wb-module>
 </project-modules>
